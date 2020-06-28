@@ -26,6 +26,11 @@ De url voor deze repo is https://github.com/flagis/ogcapi_s2
 
 We starten met de `Master branch`, en stappen dan verder naar de andere branches (zodat je niet alle code zelf moet intypen). Zorg dus dat de git client niet te ver weg is, om telkens van branch te switchen. Geen nood als je dit nog niet gedaan hebt, ik neem jullie bij de hand.
 
+Tijdens de sessie gaan we geregeld kijken naar:
+- http://docs.opengeospatial.org/is/17-069r3/17-069r3.html
+- https://github.com/opengeospatial/ogcapi-features
+- http://beta.fmi.fi/data/3/wfs/sofp/collections
+
 ## Stap 1
 
 Na de installatie van NodeJS en het clonen van de Master branch:
