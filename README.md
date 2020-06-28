@@ -22,6 +22,7 @@ Type ".help" for more information.
 ```
 
 Prima moment om ook Postman https://www.postman.com/ te installeren (download, installeer, registreren is optioneel)
+(Meer hierover in step3)
 
 
 Clone deze op je machine, maar gebruik van een git client
