@@ -18,12 +18,16 @@ router.use(function timeLog (req, res, next) {
 router.get('/', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f)
-    res.json(landingPage)
-  else if ("json" == urlParts.query.f)
-    res.json(landingPage)
+  if (null == urlParts.query.f) {
+    res.header("Content-Type",'application/json');
+    res.sendFile(path.join(__dirname + '/data/collections.js'));
+  }
+  else if ("json" == urlParts.query.f) {
+    res.header("Content-Type",'application/json');
+    res.sendFile(path.join(__dirname + '/data/collections.js'));
+  }
   else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/data/landingPage.html'));
+    res.sendFile(path.join(__dirname + '/data/collections.html'));
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
