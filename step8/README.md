@@ -48,6 +48,23 @@ Landing Page:
 - http://localhost/kontich/collections?f=json
 - http://localhost/kontich/collections?f=html
 
+Resultaat:
+
+in JSON
+> `{"title":"Kontich","description":"Access to data about buildings in the city of Kontich via a Web API that conforms to the OGC API Features specification.","links":[{"href":"http://localhost/kontich/","rel":"self","type":"application/json","title":"this document"},{"href":"http://localhost/kontich/api","rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"the API definition"},{"href":"http://localhost/kontich/api.html","rel":"service-doc","type":"text/html","title":"the API documentation"},{"href":"http://localhost/kontich/conformance","rel":"conformance","type":"application/json","title":"OGC API conformance classes implemented by this server"},{"href":"http://localhost/kontich/collections","rel":"data","type":"application/json","title":"Information about the feature collections"}]}`
+
+in HTML:
+
+Collections in this service
+
+Name | Description
+------------ | -------------
+Groepsopvang Babys En Peuters|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich (op https://poi.michelstuyts.be/kontich/).
+Openlucht Sportvelden|Openlucht Sportvelden uit de Informatie Vlaanderen API voor de gemeente Kontich (op https://poi.michelstuyts.be/kontich/).
+Sport lokalen|Sport lokalen uit de Informatie Vlaanderen API voor de gemeente Kontich (https://poi.michelstuyts.be/kontich/).
+September kermis|Septemberkermis uit de Informatie Vlaanderen API voor de gemeente Kontich (https://poi.michelstuyts.be/kontich/).
+Groendienst|Groendienst uit de Informatie Vlaanderen API voor de gemeente Kontich (https://poi.michelstuyts.be/kontich/).
+
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
 
