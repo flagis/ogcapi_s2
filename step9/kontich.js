@@ -5,7 +5,7 @@ var landingPage = require('./data/landingPage');
 var path = require('path');
 
 var collectionsNames = ["GroepsopvangBabysEnPeuters", 
-                        "OpenluchtSportvelden", "Sportlokalen"];
+                        "OpenluchtSportvelden", "Sportlokalen", "groendienst", "septemberkermis"];
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -59,11 +59,11 @@ router.get('/collections', function (req, res) {
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f) {
     res.header("Content-Type",'application/json');
-    res.sendFile(path.join(__dirname + '/data/collections.js'));
+    res.sendFile(path.join(__dirname + '/data/collections.json'));
   }
   else if ("json" == urlParts.query.f) {
     res.header("Content-Type",'application/json');
-    res.sendFile(path.join(__dirname + '/data/collections.js'));
+    res.sendFile(path.join(__dirname + '/data/collections.json'));
   }
   else if ("html" == urlParts.query.f)
     res.sendFile(path.join(__dirname + '/data/collections.html'));
@@ -74,24 +74,19 @@ router.get('/collections', function (req, res) {
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
 
-  console.log(req.params.collectionId);
-
   if (!collectionsNames.includes(req.params.collectionId))
   {
     res.status(404).send("The requested URL " + req.url + " was not found on this server");
     return;
   }
 
-  /*
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f)
-    res.json(collections)
-  else if ("json" == urlParts.query.f)
-    res.json(collections)
-  else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/collections.html'));
-*/
-  res.send('collections on this server met bomen')
+  var ext = urlParts.query.f;
+  if (null == ext)
+    ext = "html";
+  ext = "." + ext;
+
+   res.sendFile(path.join(__dirname + '/data/' + req.params.collectionId + ext));
 })
 
 // define the about route
