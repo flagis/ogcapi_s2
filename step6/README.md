@@ -31,13 +31,13 @@ router.get('/', function (req, res) {
   // API, for example, at path /api. There is no need to include the path of the 
   // API definition in the API definition itself.
   var item = {};
-  item.href = "http://localhost/kontich/api";
+  item.href = "http://localhost/kontich/api"; // alternatively a direct link to the yaml file elsewhere
   item.rel = "service-desc";
   item.type = "application/vnd.oai.openapi+json;version=3.0";
   item.title = "the API definition";
   landingPage.links.push(item)
   var item = {};
-  item.href = "http://localhost/kontich/api.html";
+  item.href = "http://localhost/kontich/api.html"; // alternatively a direct link to the yaml file elsewhere
   item.rel = "service-doc";
   item.type = "text/html";
   item.title = "the API documentation";
@@ -70,6 +70,22 @@ router.get('/conformance', function (req, res) {
   conformance.conformsTo.push("http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson");
   res.json(conformance)
 })
+
+// The URIs of all API definitions referenced from the landing page SHALL support the HTTP GET method.
+//
+// A GET request to the URI of an API definition linked from the landing page (link relations
+// service-desc or service-doc) with an Accept header with the value of the link property 
+// type SHALL return a document consistent with the requested media type.
+//
+router.get('/api', function (req, res) {
+  res.json('{api def document here}')
+})
+
+// 
+router.get('/api.html', function (req, res) {
+  res.send('api description in html')
+})
+
 ```
 
 ## Klaar voor de volgende stap
