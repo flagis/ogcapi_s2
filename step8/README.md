@@ -51,7 +51,8 @@ Landing Page:
 Resultaat:
 
 in JSON
-> ```json  {
+```json
+{
   "links": [
     {
       "href": "http://localhost/kontich/collections",
