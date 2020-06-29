@@ -3,7 +3,7 @@
 De Landing Page in Step6 was enkel beschikbaar in JSON, in deze les maken we die ook beschikbaar in HTML
 
 ## Stap 1:
-Zoals altijd, ga naar de step6 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
+Zoals altijd, ga naar de step7 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
 
 ## Code:
 
