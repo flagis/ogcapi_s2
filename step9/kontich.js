@@ -57,14 +57,19 @@ router.get('/api.html', function (req, res) {
 router.get('/collections', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f)
-    res.json(collections)
-  else if ("json" == urlParts.query.f)
-    res.json(collections)
+  if (null == urlParts.query.f) {
+    res.header("Content-Type",'application/json');
+    res.sendFile(path.join(__dirname + '/data/collections.js'));
+  }
+  else if ("json" == urlParts.query.f) {
+    res.header("Content-Type",'application/json');
+    res.sendFile(path.join(__dirname + '/data/collections.js'));
+  }
   else if ("html" == urlParts.query.f)
     res.sendFile(path.join(__dirname + '/data/collections.html'));
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
+})
 })
 
 // define the about route
