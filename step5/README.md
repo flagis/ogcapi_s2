@@ -17,28 +17,44 @@ router.use(function timeLog (req, res, next) {
   next()
 })
 
-// define the home page route
+// The server SHALL support the HTTP GET operation at the path /.
 router.get('/', function (req, res) {
   res.send('Kontich landing page')
 })
 
-// define the about route
+// The server SHALL support the HTTP GET operation at the path /conformance.
 router.get('/conformance', function (req, res) {
   res.send('conformance page')
 })
 
-// define the about route
+// Collections provides information about and access to the collections.
+// The server SHALL support the HTTP GET operation at the path /collections.
 router.get('/collections', function (req, res) {
   res.send('collections on this server')
 })
 
-//...
+// The server SHALL support the HTTP GET operation at the path
+router.get('/collections/:collectionId', function (req, res) {
+  console.log(req.params);
+  res.send('collections on this server met bomen')
+})
+
+// define the about route
+router.get('/collections/:collectionId/items', function (req, res) {
+  res.send('collections on this server met bomen items')
+})
+
+// define the about route
+router.get('/collections/:collectionId/items/:item', function (req, res) {
+  console.log(req.params);
+  res.send('collections on this server met bomen items id')
+})
 
 module.exports = router
 ```
 
 We hebben een Landing Page, Conformance en Collections opgezet - mooi!
-Dit zijn 3 essentiele paden die **moeten** aanwezig zijn (de andere paden bekijken we straks)
+Dit zijn 3 essentiele paden die **moeten** aanwezig zijn
 
 Laten we eens in de spec kijken wat we hier mee aan moeten:
 - http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_landing_page
