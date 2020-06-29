@@ -1,7 +1,7 @@
 # Stap 5
 
 We gaan een OGC API Features service maken voor Kontich! Joepie
-Het is te zeggen, we gaan de stubs opzetten voor de OGC API Feature service en ze even in detail gaan bekijken
+Het is te zeggen, we gaan de stubs opzetten voor de OGC API Feature service en ze even in detail gaan bekijken (dit kwam al aan bod in sessie 1 van deze FLAGIS academische sessie)
 
 ## 1 Voorbereiding:
 Eerst even Express installeren (om de repo zo klein mogelijk te houden, zit `express` er niet bij en moet je het installeren bij de eerste keer dat je de code runt in de directory. Eenmaal het er staat, ben je OK)
