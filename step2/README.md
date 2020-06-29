@@ -1,45 +1,52 @@
-# FLAGIS OGC API Session 2
+# Stap 2
 
-In een eerste van twee technische delen (16 december 2019) gingen we dieper in op de ontstaansgeschiedenis en opbouw van de nieuwe serie van OGC API's, hoe ze passen in de API roadmap. We gebruikten OpenAPI en SwaggerHub om de OGC API Features verder (technisch) te ontleden en met een onderliggende test database ook effectief aan te roepen.
+Installatie van ExpressJs, het gaat ons leven makkelijker maken om om te gaan met paden in http
+De website van ExpressJS is https://expressjs.com/. Je hoeft er niet naartoe te gaan, we installeren express via de node package manager `npm`
 
-Hoog tijd om een stap verder te gaan: in het tweede gedeelte nemen we de andere onderdelen van de OGC API familie onder de loep (coverages, map tiles and Processes) en bouwen we een voorbeeld server middels NodeJS. Breng dus opnieuw je laptop mee!
+> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-## Voorbereiding
 
-Installeer NodeJS
-Ga naar https://nodejs.org/en/ en installeer de LTS
+## Installer ExpressJS
 
-Test de installatie via een command prompt:
+Ga naar de directory van step2, en met een command prompt, typ:
+
 ```
-node
-```
-
-Als alles correct werd geinstalleerd, dan zie je:
-```
-Welcome to Node.js v12.18.1.
-Type ".help" for more information.
->
+npm install express --save
 ```
 
-Clone deze op je machine, maar gebruik van een git client
-De url voor deze repo is https://github.com/flagis/ogcapi_s2
+Na de installatie zie je:
 
-We starten met de `Master branch`, en stappen dan verder naar de andere branches (zodat je niet alle code zelf moet intypen). Zorg dus dat de git client niet te ver weg is, om telkens van branch te switchen. Geen nood als je dit nog niet gedaan hebt, ik neem jullie bij de hand.
+```
+...
++ express@4.17.1
+added 50 packages from 37 contributors and audited 50 packages in 1.563s
+found 0 vulnerabilities
+```
 
-Tijdens de sessie gaan we geregeld kijken naar:
-- http://docs.opengeospatial.org/is/17-069r3/17-069r3.html
-- https://github.com/opengeospatial/ogcapi-features
-- http://beta.fmi.fi/data/3/wfs/sofp/collections
+## Start NodeJS (met ExpressJS)
 
-## Stap 1
+ExpressJS wordt gekort tot Express, net als NodeJS verkort wordt tot Node
 
-Na de installatie van NodeJS en het clonen van de Master branch:
-
-### 1:
-in je command prompt, ga je daar de directory waar je de repo hebt neergezet
-
-
-### 2:
 ```
 node index.js
 ```
+Op je scherm:
+```
+Example app listening at http://localhost:80
+```
+
+## Testen in een browser:
+http://localhost
+
+`Hello World!`
+
+Echter, elk ander pad werkt nu niet meer
+http://localhost/kontich
+
+geeft:
+`Cannot GET /kontich`
+
+en dat is prima (voor het moment)
+
+## Klaar voor de volgende stap
+https://github.com/flagis/ogcapi_s2/blob/master/step3/README.md
