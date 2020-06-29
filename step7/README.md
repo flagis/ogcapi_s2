@@ -13,11 +13,11 @@ router.get('/', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f)
-    res.json(landingPage)
+    res.json(make.landingPage(urlParts.query.f))
   else if ("json" == urlParts.query.f)
-    res.json(landingPage)
+    res.json(make.landingPage(urlParts.query.f))
   else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/data/landingPage.html'));
+    res.send(make.landingPage(urlParts.query.f))
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
