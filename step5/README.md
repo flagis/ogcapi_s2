@@ -64,5 +64,11 @@ Laten we eens in de spec kijken wat we hier mee aan moeten:
 - [Feature collection](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_)
 - [Feature](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_items_)
 
+## Testen
+
+http://localhost/kontich/
+
+`Kontich landing page`
+
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step6/README.md
