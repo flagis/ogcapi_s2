@@ -23,7 +23,9 @@ added 50 packages from 37 contributors and audited 50 packages in 1.563s
 found 0 vulnerabilities
 ```
 
-## Start NodeJS (met Express)
+## Start NodeJS (met ExpressJS)
+
+ExpressJS wordt gekort tot Express, net als NodeJS verkort wordt tot Node
 
 ```
 node index.js
