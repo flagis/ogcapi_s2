@@ -20,6 +20,7 @@ item.rel = "service-desc";
 item.type = "application/vnd.oai.openapi+json;version=3.0";
 item.title = "the API definition";
 landingPage.links.push(item)
+
 var item = {};
 item.href = "http://localhost/kontich/api.html";
 item.rel = "service-doc";
