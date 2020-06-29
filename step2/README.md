@@ -40,3 +40,5 @@ http://localhost/kontich
 
 geeft:
 `Cannot GET /kontich`
+
+en dat is prima (voor het moment)
