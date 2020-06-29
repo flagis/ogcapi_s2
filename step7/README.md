@@ -5,7 +5,7 @@ De Landing Page in Step6 was enkel beschikbaar in JSON, in deze les maken we die
 ## Stap 1:
 Zoals altijd, ga naar de step7 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
 
-## Code:
+## Code voor `/` (Landing Page)
 
 ```javascript
 // define the home page route
