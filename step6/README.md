@@ -88,5 +88,8 @@ router.get('/api.html', function (req, res) {
 
 ```
 
+## Merk op
+/api en /api.html zijn toegevoegd, maar hoeft niet volgens de spec. Beide documenten kunnen ook elders 'leven'
+
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step7/README.md
