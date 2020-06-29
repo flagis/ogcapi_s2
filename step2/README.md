@@ -3,6 +3,9 @@
 Installatie van ExpressJs, het gaat ons leven makkelijker maken om om te gaan met paden in http
 De website van ExpressJS is https://expressjs.com/. Je hoeft er niet naartoe te gaan, we installeren express via de node package manager `npm`
 
+> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+
 ## Installer ExpressJS
 
 Ga naar de directory van step2, en met een command prompt, typ:
