@@ -33,8 +33,8 @@ node index.js
 In je browser of via PostMan
 
 Landing Page:
-http://localhost/kontich
-http://localhost/kontich?f=json
+- http://localhost/kontich
+- http://localhost/kontich?f=json
 
 Resultaat:
 
