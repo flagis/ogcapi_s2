@@ -34,7 +34,20 @@ router.get('/collections', function (req, res) {
 
 ```
 
-## 2:
+## 2 Testen:
 ```
 node index.js
 ```
+
+`Example app listening at http://localhost:80`
+
+In je browser of via PostMan
+
+Landing Page:
+- http://localhost/kontich/collections
+- http://localhost/kontich/collections?f=json
+- http://localhost/kontich/collections?f=html
+
+## Klaar voor de volgende stap
+https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
+
