@@ -59,3 +59,7 @@ Een GET command is makkelijk te versturen via de browser, maar de andere niet - 
 Installeer Postman https://www.postman.com/ (download, installeer, registreren is optioneel) (vele andere gelijkaardige tools zijn even goed, zoals Insomnia)
 
 In Postman: neem het `POST` command in de dropdown, in het url vakje: `http://localhost/`
+
+Test ook `PUT` en `DELETE` voor `http://localhost/user`
+
+Onze focus gaat vooral naar `'GET` in de eerste 10 lessen
