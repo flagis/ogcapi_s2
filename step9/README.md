@@ -54,7 +54,7 @@ Landing Page:
 
 Resultaat:
 
-in JSON
+### in JSON
 ```json
 {
   "links": [
@@ -83,7 +83,7 @@ in JSON
 }
 ```
 
-in HTML:
+### in HTML:
 
 Metadata about the feature collections
 Collections.
