@@ -68,7 +68,7 @@ Laten we eens in de spec kijken wat we hier mee aan moeten:
 
 http://localhost/kontich/
 
-`Kontich landing page`
+> `Kontich landing page`
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step6/README.md
