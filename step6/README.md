@@ -114,9 +114,9 @@ http://localhost/kontich/conformance
 
 > `{"conformsTo":["http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/html","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson"]}`
 
-Hetzelfde voor Conformanec, best leesbaar voor een computer, iets minder voor een mens...
+Hetzelfde voor Conformanece, best leesbaar voor een computer, iets minder voor een mens. Maar dat hoeft ook niet, de Conformance references zijn enkel voor de computer bedoeld.
 
-In les 7 gaan we de responses ook voor de mens leesbaar maken!
+In les 7 gaan we de Landing Page responses ook voor de mens leesbaar maken!
 
 ## Merk op
 /api en /api.html zijn toegevoegd, maar hoeft niet volgens de spec. Beide documenten kunnen ook elders 'leven'
