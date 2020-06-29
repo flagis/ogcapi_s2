@@ -92,8 +92,6 @@ router.get('/collections/:collectionId', function (req, res) {
 // define the about route
 router.get('/collections/:collectionId/items', function (req, res) {
 
-console.log(req.params.collectionId);
-
   if (!collectionsNames.includes(req.params.collectionId))
   {
     res.status(404).send("The requested URL " + req.url + " was not found on this server");
