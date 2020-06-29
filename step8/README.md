@@ -128,7 +128,8 @@ in JSON
       ]
     },
   ]
-}`
+}
+```
 
 in HTML:
 
@@ -136,11 +137,11 @@ in HTML:
 
 Name | Description
 ------ | -------------
-Groepsopvang Babys En Peuters|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich
-Openlucht Sportvelden|Openlucht Sportvelden uit de Informatie Vlaanderen API voor de gemeente Kontich
-Sport lokalen|Sport lokalen uit de Informatie Vlaanderen API voor de gemeente Kontich
-September kermis|Septemberkermis uit de Informatie Vlaanderen API voor de gemeente Kontich
-Groendienst|Groendienst uit de Informatie Vlaanderen API voor de gemeente Kontich
+[Groepsopvang Babys En Peuters](http://localhost/kontich/collections/GroepsopvangBabysEnPeuters/items)|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich
+[Openlucht Sportvelden](http://localhost/kontich/collections/OpenluchtSportvelden/items)|Openlucht Sportvelden uit de Informatie Vlaanderen API voor de gemeente Kontich
+[Sport lokalen](http://localhost/kontich/collections/SportLokalen/items)|Sport lokalen uit de Informatie Vlaanderen API voor de gemeente Kontich
+[September kermis](http://localhost/kontich/collections/septemberkermis/items)|Septemberkermis uit de Informatie Vlaanderen API voor de gemeente Kontich
+[Groendienst](http://localhost/kontich/collections/Groendienst/items)|Groendienst uit de Informatie Vlaanderen API voor de gemeente Kontich
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
