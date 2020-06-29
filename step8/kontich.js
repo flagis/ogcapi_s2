@@ -2,7 +2,11 @@ var express = require('express')
 var router = express.Router()
 var url = require('url');
 var landingPage = require('./data/landingPage');
+var collections = require('./data/collections');
 var path = require('path');
+
+var collectionsNames = ["GroepsopvangBabysEnPeuters", 
+                        "OpenluchtSportvelden", "Sportlokalen"];
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -53,12 +57,37 @@ router.get('/api.html', function (req, res) {
 // define the about route
 router.get('/collections', function (req, res) {
 
-  res.send('api description in html')
-
+  var urlParts = url.parse(req.url, true);
+  if (null == urlParts.query.f)
+    res.json(collections)
+  else if ("json" == urlParts.query.f)
+    res.json(collections)
+  else if ("html" == urlParts.query.f)
+    res.sendFile(path.join(__dirname + '/data/collections.html'));
+  else
+    res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
 
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
+
+  console.log(req.params.collectionId);
+
+  if (!collectionsNames.includes(req.params.collectionId))
+  {
+    res.status(404).send("The requested URL " + req.url + " was not found on this server");
+    return;
+  }
+
+  /*
+  var urlParts = url.parse(req.url, true);
+  if (null == urlParts.query.f)
+    res.json(collections)
+  else if ("json" == urlParts.query.f)
+    res.json(collections)
+  else if ("html" == urlParts.query.f)
+    res.sendFile(path.join(__dirname + '/collections.html'));
+*/
   res.send('collections on this server met bomen')
 })
 
