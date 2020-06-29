@@ -2,7 +2,6 @@ var express = require('express')
 var router = express.Router()
 var url = require('url');
 var landingPage = require('./data/landingPage');
-var collections = require('./data/collections');
 var path = require('path');
 
 var collectionsNames = ["GroepsopvangBabysEnPeuters", 
