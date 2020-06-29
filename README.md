@@ -6,7 +6,7 @@ Hoog tijd om een stap verder te gaan: in het tweede gedeelte nemen we de andere 
 
 ## Voorbereiding
 
-Installeer NodeJS
+### Installeer NodeJS
 Ga naar https://nodejs.org/en/ en installeer de LTS
 
 Test de installatie via een command prompt:
@@ -25,25 +25,13 @@ Prima moment om ook Postman https://www.postman.com/ te installeren (download, i
 (Meer hierover in step3)
 
 
-Clone deze op je machine, maar gebruik van een git client
+### Clone deze repo op je machine
+
+maak gebruik van een git client (https://desktop.github.com/)
+
 De url voor deze repo is https://github.com/flagis/ogcapi_s2
 
-We starten met de `Master branch`, en stappen dan verder naar de andere branches (zodat je niet alle code zelf moet intypen). Zorg dus dat de git client niet te ver weg is, om telkens van branch te switchen. Geen nood als je dit nog niet gedaan hebt, ik neem jullie bij de hand.
-
-Tijdens de sessie gaan we geregeld kijken naar:
+Tijdens de sessie gaan we geregeld kijken naar, dus hou ze bij de hand in je browser tabs
 - http://docs.opengeospatial.org/is/17-069r3/17-069r3.html
 - https://github.com/opengeospatial/ogcapi-features
 - http://beta.fmi.fi/data/3/wfs/sofp/collections
-
-## Stap 1
-
-Na de installatie van NodeJS en het clonen van de Master branch:
-
-### 1:
-in je command prompt, ga je daar de directory waar je de repo hebt neergezet
-
-
-### 2:
-```
-node index.js
-```
