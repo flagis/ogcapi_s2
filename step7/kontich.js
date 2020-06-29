@@ -59,7 +59,7 @@ router.get('/collections', function (req, res) {
 
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
-  res.send('todo')
+  res.send('collections/:collectionId')
 })
 
 // define the about route

@@ -3,9 +3,9 @@ var router = express.Router()
 var url = require('url');
 var landingPage = require('./data/landingPage');
 var path = require('path');
+var fs = require('fs');
 
-var collectionsNames = ["GroepsopvangBabysEnPeutersKontich", 
-                        "OpenluchtSportveldKontich", "SportlokaalKontich", "groendienst", "septemberkermis"];
+var files = fs.readdirSync(path.join(__dirname, "data")).filter(fn => fn.endsWith('.geojson'));
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -15,6 +15,8 @@ router.use(function timeLog (req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
+
+console.log(files);
 
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f)
@@ -73,25 +75,7 @@ router.get('/collections', function (req, res) {
 
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
-
-  console.log(req.params.collectionId);
-
-  if (!collectionsNames.includes(req.params.collectionId))
-  {
-    res.status(404).send("The requested URL " + req.url + " was not found on this server");
-    return;
-  }
-
-  /*
-  var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f)
-    res.json(collections)
-  else if ("json" == urlParts.query.f)
-    res.json(collections)
-  else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/collections.html'));
-*/
-  res.send('collections on this server met bomen')
+  res.send('collections/:collectionId')
 })
 
 // define the about route
