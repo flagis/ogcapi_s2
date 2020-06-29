@@ -25,3 +25,6 @@ http://localhost/birds/about
 
 Geeft:
 `About birds`
+
+# Klaar voor de volgende stap
+https://github.com/flagis/ogcapi_s2/blob/master/step5/README.md
