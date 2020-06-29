@@ -38,13 +38,13 @@ Example app listening at http://localhost:80
 ## Testen in een browser:
 http://localhost
 
-`Hello World!`
+> `Hello World!`
 
 Echter, elk ander pad werkt nu niet meer
 http://localhost/kontich
 
 geeft:
-`Cannot GET /kontich`
+> `Cannot GET /kontich`
 
 en dat is prima (voor het moment)
 
