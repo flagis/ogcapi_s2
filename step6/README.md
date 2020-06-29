@@ -4,7 +4,7 @@ In deze oefening gaan we de Landing page en Conformance invullen.
 We gaan dit 'hardcoded'doen, zonder gebruik te maken van javascript modules, zodat we goed zien wat we maken (later kunnen we dit verder abstraheren). Alle antwoorden zijn in JSON.
 
 
-## 1:
+## Stap 1:
 Zoals altijd, ga naar de step6 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory.
 
 ## Code:
@@ -71,8 +71,6 @@ router.get('/conformance', function (req, res) {
   res.json(conformance)
 })
 ```
-
-
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step7/README.md
