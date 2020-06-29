@@ -11,6 +11,8 @@ Zoals altijd, ga naar de step6 directory met je command prompt, en installeer ex
 
 ```javascript
 ...
+var make = require('./landingPage');
+...
 router.get('/', function (req, res) {
 
   var landingPage = make.header("Kontich", "Access to data about buildings in the city of Kontich via a Web API that conforms to the OGC API Features specification.");
