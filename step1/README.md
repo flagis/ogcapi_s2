@@ -17,5 +17,5 @@ http://localhost
 
 Het browser window toont nu: `Hello World!`
 
-# Klaar voor de volgende stap
+## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step2/README.md
