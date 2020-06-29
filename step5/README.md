@@ -1,6 +1,6 @@
 # Stap 5
 
-We gaan een OGC API Features maken voor Kontich! Joepie
+We gaan een OGC API Features service maken voor Kontich! Joepie
 
 ## 1 Voorbereiding:
 Eerst even Express installeren (om de repo zo klein mogelijk te houden, zit `express` er niet bij en moet je het installeren bij de eerste keer dat je de code runt in de directory. Eenmaal het er staat, ben je OK)
