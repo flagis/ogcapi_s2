@@ -91,7 +91,24 @@ router.get('/collections/:collectionId', function (req, res) {
 
 // define the about route
 router.get('/collections/:collectionId/items', function (req, res) {
-  res.send('collections/:collectionId/items')
+
+console.log(req.params.collectionId);
+
+  if (!collectionsNames.includes(req.params.collectionId))
+  {
+    res.status(404).send("The requested URL " + req.url + " was not found on this server");
+    return;
+  }
+
+  var urlParts = url.parse(req.url, true);
+  var ext = urlParts.query.f;
+  if (null == ext)
+    ext = "html";
+  ext = "." + ext;
+  if (ext == ".json")
+     ext = ".geojson";
+
+  res.sendFile(path.join(__dirname + '/data/' + req.params.collectionId + ext));
 })
 
 // define the about route

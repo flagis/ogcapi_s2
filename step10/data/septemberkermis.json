@@ -1,0 +1,27 @@
+{
+  "links": [
+    {
+      "href": "http://localhost/kontich/collections",
+      "rel": "self",
+      "type": "application/json",
+      "title": "Metadata about the feature collections"
+    }
+  ],
+  "collections": [
+    
+    {
+      "name": "septemberkermis",
+      "title": "September Kermis",
+      "description": "",
+      "links": [
+        {
+          "href": "https://localhost/kontich/collections/septemberkermis/items",
+          "rel": "item",
+          "type": "application/json",
+          "title": "September Kermis"
+        }
+      ]
+    },
+
+  ]
+}

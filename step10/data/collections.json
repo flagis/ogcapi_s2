@@ -11,11 +11,11 @@
     
     {
       "name": "Groepsopvang_Babys_En_Peuters",
-      "title": "Groepsopvang Babys En Peuters",
+      "title": "Groepsopvang Babys En Peuters in Kontich",
       "description": "GroepsopvangBabysEnPeuters",
       "links": [
         {
-          "href": "https://localhost/kontich/collections/GroepsopvangBabysEnPeuters/items",
+          "href": "http://localhost/kontich/collections/GroepsopvangBabysEnPeutersKontich/items",
           "rel": "item",
           "type": "application/json",
           "title": "Groepsopvang Babys En Peuters"
@@ -25,11 +25,11 @@
     
     {
       "name": "Openlucht_Sportvelden",
-      "title": "Openlucht Sportvelden",
+      "title": "Openlucht Sportvelden in Kontich",
       "description": "",
       "links": [
         {
-          "href": "https://localhost/kontich/collections/OpenluchtSportvelden/items",
+          "href": "http://localhost/kontich/collections/OpenluchtSportveldKontich/items",
           "rel": "item",
           "type": "application/json",
           "title": "Openlucht Sportvelden"
@@ -40,11 +40,11 @@
     
     {
       "name": "Sport_Lokalen",
-      "title": "Sport Lokalen",
+      "title": "Sport Lokalen in Kontich",
       "description": "",
       "links": [
         {
-          "href": "https://localhost/kontich/collections/SportLokalen/items",
+          "href": "http://localhost/kontich/collections/SportLokaalKontich/items",
           "rel": "item",
           "type": "application/json",
           "title": "Sport Lokalen"
@@ -58,7 +58,7 @@
       "description": "",
       "links": [
         {
-          "href": "https://localhost/kontich/collections/septemberkermis/items",
+          "href": "http://localhost/kontich/collections/septemberkermis/items",
           "rel": "item",
           "type": "application/json",
           "title": "September Kermis"
@@ -73,14 +73,12 @@
       "description": "",
       "links": [
         {
-          "href": "https://localhost/kontich/collections/Groendienst/items",
+          "href": "http://localhost/kontich/collections/Groendienst/items",
           "rel": "item",
           "type": "application/json",
           "title": "Groendienst"
         }
       ]
     },
-
-    
   ]
 }

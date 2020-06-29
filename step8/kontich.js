@@ -4,8 +4,8 @@ var url = require('url');
 var landingPage = require('./data/landingPage');
 var path = require('path');
 
-var collectionsNames = ["GroepsopvangBabysEnPeuters", 
-                        "OpenluchtSportvelden", "Sportlokalen"];
+var collectionsNames = ["GroepsopvangBabysEnPeutersKontich", 
+                        "OpenluchtSportveldKontich", "SportlokaalKontich", "groendienst", "septemberkermis"];
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -59,11 +59,11 @@ router.get('/collections', function (req, res) {
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f) {
     res.header("Content-Type",'application/json');
-    res.sendFile(path.join(__dirname + '/data/collections.js'));
+    res.sendFile(path.join(__dirname + '/data/collections.json'));
   }
   else if ("json" == urlParts.query.f) {
     res.header("Content-Type",'application/json');
-    res.sendFile(path.join(__dirname + '/data/collections.js'));
+    res.sendFile(path.join(__dirname + '/data/collections.json'));
   }
   else if ("html" == urlParts.query.f)
     res.sendFile(path.join(__dirname + '/data/collections.html'));
