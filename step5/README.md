@@ -45,4 +45,5 @@ Laten we eens in de spec kijken wat we hier mee aan moeten:
 - https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes
 - https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_
 
-
+## Klaar voor de volgende stap
+https://github.com/flagis/ogcapi_s2/blob/master/step6/README.md
