@@ -58,7 +58,7 @@ in HTML:
 > Collections in this service
 
 > Name | Description
------------- | -------------
+------ | -------------
 Groepsopvang Babys En Peuters|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich
 Openlucht Sportvelden|Openlucht Sportvelden uit de Informatie Vlaanderen API voor de gemeente Kontich
 Sport lokalen|Sport lokalen uit de Informatie Vlaanderen API voor de gemeente Kontich
