@@ -15,7 +15,8 @@ node index.js
 ## 3: open een browser om te testen of alles werkt:
 http://localhost
 
-Het browser window toont nu: > `Hello World!`
+Het browser window toont nu: 
+> `Hello World!`
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step2/README.md
