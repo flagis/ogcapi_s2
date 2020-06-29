@@ -18,13 +18,13 @@ node index.js
 
 http://localhost/birds
 
-Geeft:
-`Birds home page`
+Resultaat:
+> `Birds home page`
 
 http://localhost/birds/about
 
-Geeft:
-`About birds`
+Resultaat:
+> `About birds`
 
 ## Middleware
 Express laat toe dat je Middleware gebruik: een sectie waarlangs eerst gaat, alvorens en pad te kiezen.
