@@ -60,6 +60,8 @@ Installeer Postman https://www.postman.com/ (download, installeer, registreren i
 
 In Postman: neem het `POST` command in de dropdown, in het url vakje: `http://localhost/`
 
+In het resultaten window komnt nu: `Got a POST request`
+
 Test ook `PUT` en `DELETE` voor `http://localhost/user`
 
 Onze focus gaat vooral naar `'GET` in de eerste 10 lessen
