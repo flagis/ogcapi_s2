@@ -65,3 +65,6 @@ In het resultaten window komnt nu: `Got a POST request`
 Test ook `PUT` en `DELETE` voor `http://localhost/user`
 
 Onze focus gaat vooral naar `'GET` in de eerste 10 lessen
+
+# Klaar voor de volgende stap
+https://github.com/flagis/ogcapi_s2/blob/master/step4/README.md
