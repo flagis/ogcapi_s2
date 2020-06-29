@@ -89,6 +89,24 @@ router.get('/api.html', function (req, res) {
 ```
 
 ## Merk op
+
+Start node op:
+
+```
+node index.js
+```
+
+`Example app listening at http://localhost:80`
+
+In je browser of via PostMan
+
+Landing Page:
+http://localhost/kontich
+
+Conformance:
+http://localhost/kontich/conformance
+
+## Merk op
 /api en /api.html zijn toegevoegd, maar hoeft niet volgens de spec. Beide documenten kunnen ook elders 'leven'
 
 ## Klaar voor de volgende stap
