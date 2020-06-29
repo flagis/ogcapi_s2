@@ -1,44 +1,86 @@
-var landingPage = {};
-landingPage.title = "Kontich";
-landingPage.description = "Access to data about buildings in the city of Kontich via a Web API that conforms to the OGC API Features specification.";
-landingPage.links = [];
+{
+  "links": [
+    {
+      "href": "http://localhost/kontich/collections",
+      "rel": "self",
+      "type": "application/json",
+      "title": "Metadata about the feature collections"
+    }
+  ],
+  "collections": [
+    
+    {
+      "name": "Groepsopvang_Babys_En_Peuters",
+      "title": "Groepsopvang Babys En Peuters",
+      "description": "GroepsopvangBabysEnPeuters",
+      "links": [
+        {
+          "href": "https://localhost/kontich/collections/GroepsopvangBabysEnPeuters/items",
+          "rel": "item",
+          "type": "application/json",
+          "title": "Groepsopvang Babys En Peuters"
+        }
+      ]
+    },
+    
+    {
+      "name": "Openlucht_Sportvelden",
+      "title": "Openlucht Sportvelden",
+      "description": "",
+      "links": [
+        {
+          "href": "https://localhost/kontich/collections/OpenluchtSportvelden/items",
+          "rel": "item",
+          "type": "application/json",
+          "title": "Openlucht Sportvelden"
+        }
+      ]
+    },
+    
+    
+    {
+      "name": "Sport_Lokalen",
+      "title": "Sport Lokalen",
+      "description": "",
+      "links": [
+        {
+          "href": "https://localhost/kontich/collections/SportLokalen/items",
+          "rel": "item",
+          "type": "application/json",
+          "title": "Sport Lokalen"
+        }
+      ]
+    },
 
-var item = {};
-item.href = "http://localhost/kontich/";
-item.rel = "self";
-item.type = "application/json";
-item.title = "this document";
-landingPage.links.push(item)
+    {
+      "name": "septemberkermis",
+      "title": "September Kermis",
+      "description": "",
+      "links": [
+        {
+          "href": "https://localhost/kontich/collections/septemberkermis/items",
+          "rel": "item",
+          "type": "application/json",
+          "title": "September Kermis"
+        }
+      ]
+    },
 
-// The API definition is metadata about the API and strictly not part of the
-// API itself, but it MAY be hosted as a sub-resource to the base path of the
-// API, for example, at path /api. There is no need to include the path of the 
-// API definition in the API definition itself.
-var item = {};
-item.href = "http://localhost/kontich/api";
-item.rel = "service-desc";
-item.type = "application/vnd.oai.openapi+json;version=3.0";
-item.title = "the API definition";
-landingPage.links.push(item)
-var item = {};
-item.href = "http://localhost/kontich/api.html";
-item.rel = "service-doc";
-item.type = "text/html";
-item.title = "the API documentation";
-landingPage.links.push(item)
+    
+    {
+      "name": "groendienst",
+      "title": "Groendienst",
+      "description": "",
+      "links": [
+        {
+          "href": "https://localhost/kontich/collections/Groendienst/items",
+          "rel": "item",
+          "type": "application/json",
+          "title": "Groendienst"
+        }
+      ]
+    },
 
-var item = {};
-item.href = "http://localhost/kontich/conformance";
-item.rel = "conformance";
-item.type = "application/json";
-item.title = "OGC API conformance classes implemented by this server";
-landingPage.links.push(item)
-
-var item = {};
-item.href = "http://localhost/kontich/collections";
-item.rel = "data";
-item.type = "application/json";
-item.title = "Information about the feature collections";
-landingPage.links.push(item)
-
-module.exports = landingPage
+    
+  ]
+}
