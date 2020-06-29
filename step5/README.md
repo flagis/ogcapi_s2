@@ -40,7 +40,9 @@ module.exports = router
 We hebben een Landing Page, Conformance en Collections opgezet - mooi!
 Dit zijn 3 essentiele paden die **moeten** aanwezig zijn (de andere paden bekijken we straks)
 
-Laten we eens in de spec kijken wat we hier mee aan moeten
-http://docs.opengeospatial.org/is/17-069r3/17-069r3.html
+Laten we eens in de spec kijken wat we hier mee aan moeten:
+- http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_landing_page
+- https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes
+- https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_
 
 
