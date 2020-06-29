@@ -94,10 +94,10 @@ Links for the collection
 item = [groendienst](http://localhost/kontich/collections/groendienst/items) (application/json)
 
 Links
-self = (Metadata about the feature collections)[http://localhost/kontich/collections] (application/json)
+self = [Metadata about the feature collections](http://localhost/kontich/collections) (application/json)
 
 JSON output
-Get raw (JSON)[http://localhost/kontich/collections?f=json]
+Get raw [JSON](http://localhost/kontich/collections?f=json)
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
