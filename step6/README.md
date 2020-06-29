@@ -11,23 +11,16 @@ Zoals altijd, ga naar de step6 directory met je command prompt, en installeer ex
 
 ```javascript
 ...
+var make = require('./landingPage');
+...
 router.get('/', function (req, res) {
 
-  var landingPage = {};
-  landingPage.title = "Kontich";
-  landingPage.description = "Access to data about buildings in the city of Kontich via a Web API that conforms to the OGC API Features specification.";
-  landingPage.links = [];
-  
-  var item = ci("http://localhost/kontich/", "self", "application/json", "this document");
-  landingPage.links.push(item);
-  var item = ci("http://localhost/kontich/api", "service-desc", "application/vnd.oai.openapi+json;version=3.0", "the API definition");
-  landingPage.links.push(item);
-  var item = ci("http://localhost/kontich/api.html", "service-doc", "text/html", "the API documentation");
-  landingPage.links.push(item);
-  var item = ci("http://localhost/kontich/conformance", "conformance", "application/json", "OGC API conformance classes implemented by this server");
-  landingPage.links.push(item);
-  var item = ci("http://localhost/kontich/collections", "data", "application/json", "Information about the feature collections");
-  landingPage.links.push(item);
+  var landingPage = make.header("Kontich", "Access to data about buildings in the city of Kontich via a Web API that conforms to the OGC API Features specification.");
+  landingPage.links.push(make.item("http://localhost/kontich/",            "self",         "application/json", "this document"));
+  landingPage.links.push(make.item("http://localhost/kontich/api",         "service-desc", "application/vnd.oai.openapi+json;version=3.0", "the API definition"));
+  landingPage.links.push(make.item("http://localhost/kontich/api.html",    "service-doc",  "text/html",        "the API documentation"));
+  landingPage.links.push(make.item("http://localhost/kontich/conformance", "conformance",  "application/json", "OGC API conformance classes implemented by this server"));
+  landingPage.links.push(make.item("http://localhost/kontich/collections", "data",         "application/json", "Information about the feature collections"));
 
   res.json(landingPage)
 })
