@@ -7,7 +7,7 @@ Eerst even Express installeren (om de repo zo klein mogelijk te houden, zit `exp
 
 
 ## 2 Eerste voorzichtige stapjes
-```
+```javascript
 var express = require('express')
 var router = express.Router()
 
