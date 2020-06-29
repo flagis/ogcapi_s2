@@ -26,5 +26,9 @@ http://localhost/birds/about
 Geeft:
 `About birds`
 
-# Klaar voor de volgende stap
+## Middleware
+Express laat toe dat je Middleware gebruik: een sectie waarlangs eerst gaat, alvorens en pad te kiezen.
+Nu gebruiken we het om te tijd te tonen, later gaat het handig zijn om bv security calls te maken.
+
+## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step5/README.md
