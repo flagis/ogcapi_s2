@@ -43,6 +43,6 @@ Dit zijn 3 essentiele paden die **moeten** aanwezig zijn (de andere paden bekijk
 Laten we eens in de spec kijken wat we hier mee aan moeten:
 - http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_landing_page
 - https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes
-- https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_
+- https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections
 
 
