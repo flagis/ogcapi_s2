@@ -33,11 +33,14 @@ Tijdens de sessie gaan we geregeld kijken naar, hou deze open in je de browser t
 
 Na de installatie van NodeJS en het clonen van deze Master branch:
 
-### 1:
+### 1: open command prompt
 Met een command prompt, ga naar de directory waar je de repo hebt neergezet
 
 
-### 2:
+### 2: start een basic node script
 ```
 node index.js
 ```
+
+### 3: open een browser om te testen of alles werkt:
+http://localhost
