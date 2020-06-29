@@ -56,7 +56,7 @@ in JSON
 in HTML:
 
 > Collections in this service
->
+
 > Name | Description
 ------------ | -------------
 Groepsopvang Babys En Peuters|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich
