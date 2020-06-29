@@ -5,9 +5,14 @@ De Landing Page in Step6 was enkel beschikbaar in JSON, in deze les maken we die
 ## Stap 1:
 Zoals altijd, ga naar de step7 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
 
+We gaan swig-templates gebruiken om de html landingPage te maken, dus : `npm i swig-templates`
+
 ## Code voor `/` (Landing Page)
 
 ```javascript
+...
+var make = require('./landingPage');
+...
 // define the home page route
 router.get('/', function (req, res) {
 
@@ -22,6 +27,9 @@ router.get('/', function (req, res) {
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
 ```
+
+De javascript module [landingPage](https://github.com/flagis/ogcapi_s2/tree/master/step7/landingPage.js) maakt het JSON of HTML antwoord.
+
 
 ## 2 Testen:
 ```
