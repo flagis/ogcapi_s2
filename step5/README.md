@@ -57,9 +57,11 @@ We hebben een Landing Page, Conformance en Collections opgezet - mooi!
 Dit zijn 3 essentiele paden die **moeten** aanwezig zijn
 
 Laten we eens in de spec kijken wat we hier mee aan moeten:
-- http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_landing_page
-- https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes
-- https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_
+- [Landing Page](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_landing_page)
+- [Conformance](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes)
+- [Feature collections](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_)
+- [Feature collection](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collection_)
+- [Feature](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_items_)
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step6/README.md
