@@ -47,11 +47,13 @@ Example app listening at http://localhost:80
 
 In je browser: http://localhost
 
-Op het scherm komt: `Hello World!`
+Op het scherm komt:
+>`Hello World!`
 
 In je browser: http://localhost/about
 
-Op het scherm komt: `about!`
+Op het scherm komt: 
+> `about!`
 
 ## 3: Routes testen (Andere HTTP commando's)
 
@@ -60,7 +62,8 @@ Installeer Postman https://www.postman.com/ (download, installeer, registreren i
 
 In Postman: neem het `POST` command in de dropdown, in het url vakje: `http://localhost/`
 
-In het resultaten window komnt nu: `Got a POST request`
+In het resultaten window komnt nu: 
+> `Got a POST request`
 
 Test ook `PUT` en `DELETE` voor `http://localhost/user`
 
