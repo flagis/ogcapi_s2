@@ -59,11 +59,11 @@ Collections in this service
 
 Name | Description
 ------------ | -------------
-Groepsopvang Babys En Peuters|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich (op https://poi.michelstuyts.be/kontich/).
-Openlucht Sportvelden|Openlucht Sportvelden uit de Informatie Vlaanderen API voor de gemeente Kontich (op https://poi.michelstuyts.be/kontich/).
-Sport lokalen|Sport lokalen uit de Informatie Vlaanderen API voor de gemeente Kontich (https://poi.michelstuyts.be/kontich/).
-September kermis|Septemberkermis uit de Informatie Vlaanderen API voor de gemeente Kontich (https://poi.michelstuyts.be/kontich/).
-Groendienst|Groendienst uit de Informatie Vlaanderen API voor de gemeente Kontich (https://poi.michelstuyts.be/kontich/).
+Groepsopvang Babys En Peuters|Groepsopvang Babys En Peuters uit de Informatie Vlaanderen API voor de gemeente Kontich
+Openlucht Sportvelden|Openlucht Sportvelden uit de Informatie Vlaanderen API voor de gemeente Kontich
+Sport lokalen|Sport lokalen uit de Informatie Vlaanderen API voor de gemeente Kontich
+September kermis|Septemberkermis uit de Informatie Vlaanderen API voor de gemeente Kontich
+Groendienst|Groendienst uit de Informatie Vlaanderen API voor de gemeente Kontich
 
 ## Klaar voor de volgende stap
 https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
