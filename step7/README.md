@@ -46,4 +46,4 @@ http://localhost/kontich?f=html
 
 
 ## Klaar voor de volgende stap
-https://github.com/flagis/ogcapi_s2/blob/master/step7/README.md
+https://github.com/flagis/ogcapi_s2/blob/master/step8/README.md
