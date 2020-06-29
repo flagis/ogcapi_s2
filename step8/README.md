@@ -34,7 +34,7 @@ router.get('/collections', function (req, res) {
 
 ```
 
-## 2 Testen:
+## Testen:
 ```
 node index.js
 ```
