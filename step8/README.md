@@ -8,9 +8,7 @@
 
 (Met dank aan Michel Stuyts, GIS-coördinator. Zie ook op https://michelstuyts.be/)
 
-Na de installatie van NodeJS en het clonen van de Master branch:
-
-## 1:
+## Stap 1:
 Zoals altijd, ga naar de step6 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
 
 ## Code:
