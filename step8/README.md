@@ -14,6 +14,8 @@ Zoals altijd, ga naar de step6 directory met je command prompt, en installeer ex
 ## Code:
 
 ```javascript
+
+...
 // define the about route
 router.get('/collections', function (req, res) {
 
@@ -27,6 +29,9 @@ router.get('/collections', function (req, res) {
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
+
+...
+
 ```
 
 ## 2:
