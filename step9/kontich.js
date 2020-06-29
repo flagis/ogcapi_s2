@@ -70,7 +70,6 @@ router.get('/collections', function (req, res) {
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
-})
 
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
