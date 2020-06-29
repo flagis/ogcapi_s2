@@ -47,3 +47,6 @@ geeft:
 `Cannot GET /kontich`
 
 en dat is prima (voor het moment)
+
+## Klaar voor de volgende stap
+https://github.com/flagis/ogcapi_s2/blob/master/step3/README.md
