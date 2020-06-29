@@ -19,14 +19,18 @@ function item(href, rel, type, title) {
     return item;
 }
 
+const serviceTitle = "Kontich OGC API Feature server";
+const serviceDescription = "Access to data in the city of Kontich via a Web API that conforms to the OGC API Features specification.";
+const serviceUrl = "http://localhost/kontich/";
+
 function landingPageJSON() {
-    var landingPage = header("Kontich OGC API Feature server", "Access to data about buildings in the city of Kontich via a Web API that conforms to the OGC API Features specification.");
+    var landingPage = header(serviceTitle, serviceDescription);
     
-    landingPage.links.push(item("http://localhost/kontich/",            "self",         "application/json", "this document"));
-    landingPage.links.push(item("http://localhost/kontich/api",         "service-desc", "application/vnd.oai.openapi+json;version=3.0", "the API definition"));
-    landingPage.links.push(item("http://localhost/kontich/api.html",    "service-doc",  "text/html",        "the API documentation"));
-    landingPage.links.push(item("http://localhost/kontich/conformance", "conformance",  "application/json", "OGC API conformance classes implemented by this server"));
-    landingPage.links.push(item("http://localhost/kontich/collections", "data",         "application/json", "Information about the feature collections"));
+    landingPage.links.push(item(serviceUrl,                 "self",         "application/json", "this document"));
+    landingPage.links.push(item(serviceUrl + "api",         "service-desc", "application/vnd.oai.openapi+json;version=3.0", "the API definition"));
+    landingPage.links.push(item(serviceUrl + "api.html",    "service-doc",  "text/html",        "the API documentation"));
+    landingPage.links.push(item(serviceUrl + "conformance", "conformance",  "application/json", "OGC API conformance classes implemented by this server"));
+    landingPage.links.push(item(serviceUrl + "collections", "data",         "application/json", "Information about the feature collections"));
     
     return landingPage;
 }
@@ -34,8 +38,8 @@ function landingPageJSON() {
 function landingPageHTML() {
     var tmpl = swig.compileFile(__dirname + '/landingPage.template'),
     renderedHtml = tmpl({
-        title: 'Kontich OGC API Feature server',
-        url: 'http://localhost/kontich',
+        title: serviceTitle,
+        url: serviceUrl,
     });
     
     return renderedHtml;
