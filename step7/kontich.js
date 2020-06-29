@@ -1,8 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var url = require('url');
-var landingPage = require('./data/landingPage');
-var path = require('path');
+var make = require('./landingPage');
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -15,11 +14,11 @@ router.get('/', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f)
-    res.json(landingPage)
+    res.json(make.landingPage(urlParts.query.f))
   else if ("json" == urlParts.query.f)
-    res.json(landingPage)
+    res.json(make.landingPage(urlParts.query.f))
   else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/data/landingPage.html'));
+    res.send(make.landingPage(urlParts.query.f))
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
