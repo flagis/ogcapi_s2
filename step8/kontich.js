@@ -93,13 +93,13 @@ router.get('/collections/:collectionId', function (req, res) {
 
 // define the about route
 router.get('/collections/:collectionId/items', function (req, res) {
-  res.send('todo')
+  res.send('collections/:collectionId/items')
 })
 
 // define the about route
 router.get('/collections/:collectionId/items/:item', function (req, res) {
   console.log(req.params);
-  res.send('todo')
+  res.send('collections/:collectionId/items/:item')
 })
 
 module.exports = router
