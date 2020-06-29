@@ -91,7 +91,7 @@ groendienst (groendienst)
 groendienst.
 
 Links for the collection
-item = (groendienst)[http://localhost/kontich/collections/groendienst/items] (application/json)
+item = [groendienst](http://localhost/kontich/collections/groendienst/items) (application/json)
 
 Links
 self = (Metadata about the feature collections)[http://localhost/kontich/collections] (application/json)
