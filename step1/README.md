@@ -44,3 +44,5 @@ node index.js
 
 ### 3: open een browser om te testen of alles werkt:
 http://localhost
+
+Het browser window toont nu: Hello World!
