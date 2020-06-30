@@ -11,29 +11,16 @@
 ## Stap 1:
 Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
 
-## Code for `/collections/:collectionId`
+## Code for `/collections/:collectionId/items/:itenmId`
 
 ```javascript
 
 ...
 // define the about route
-router.get('/collections/:collectionId', function (req, res) {
-
-  if (!collectionsNames.includes(req.params.collectionId))
-  {
-    res.status(404).send("The requested URL " + req.url + " was not found on this server");
-    return;
-  }
-
-  var urlParts = url.parse(req.url, true);
-  var ext = urlParts.query.f;
-  if (null == ext)
-    ext = "html";
-  ext = "." + ext;
-
-   res.sendFile(path.join(__dirname + '/data/' + req.params.collectionId + ext));
+router.get('/collections/:collectionId/items/:item', function (req, res) {
+  console.log(req.params);
+  res.send('collections/:collectionId/items/:item')
 })
-
 ...
 
 ```
@@ -48,11 +35,10 @@ node index.js
 In je browser of via PostMan
 
 Landing Page:
-- http://localhost/kontich/collections/groendienst
-- http://localhost/kontich/collections/groendienst?f=json
-- http://localhost/kontich/collections/groendienst?f=html
+- http://localhost/kontich/collections/groendienst/items
+- http://localhost/kontich/collections/groendienst/items?f=json
+- http://localhost/kontich/collections/groendienst/items?f=html
 
-Resultaat:
 
 ### in JSON
 ```json
