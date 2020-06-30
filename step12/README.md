@@ -17,9 +17,9 @@ Zoals altijd, ga naar de step8 directory met je command prompt, en installeer ex
 
 ...
 // define the about route
-router.get('/collections/:collectionId/items/:item', function (req, res) {
+router.get('/collections/:collectionId/items/:featureId', function (req, res) {
   console.log(req.params);
-  res.send('collections/:collectionId/items/:item')
+  res.send('collections/:collectionId/items/:featureId')
 })
 ...
 
