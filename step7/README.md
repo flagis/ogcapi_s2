@@ -15,16 +15,35 @@ var make = require('./landingPage');
 ...
 // define the home page route
 router.get('/', function (req, res) {
+  
+  var contentType = "";
+  var accept = req.headers.accept;
+  if ("application/json" == accept)
+    contentType = "json";
+  else if ("text/html" == accept)
+    contentType = "html";
 
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f)
-    res.json(make.landingPage(urlParts.query.f))
-  else if ("json" == urlParts.query.f)
-    res.json(make.landingPage(urlParts.query.f))
-  else if ("html" == urlParts.query.f)
-    res.send(make.landingPage(urlParts.query.f))
-  else
-    res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
+  if (null != urlParts.query.f)
+  {
+    if ("json" == urlParts.query.f)
+      contentType = "json";
+    else if ("html" == urlParts.query.f)
+      contentType = "html";
+    else {
+      res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}");
+      return;
+    }
+  }
+
+  if (contentType == "")
+    contentType = "html";
+
+  if ("json" == contentType)
+    res.json(make.landingPage(contentType))
+  else if ("html" == contentType)
+    res.send(make.landingPage(contentType))
+
 })
 ```
 
