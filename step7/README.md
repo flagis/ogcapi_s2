@@ -50,7 +50,7 @@ router.get('/', function (req, res) {
 De javascript module [landingPage](https://github.com/flagis/ogcapi_s2/tree/master/step7/landingPage.js) maakt het JSON of HTML antwoord.
 
 
-## 2 Testen:
+## Testen:
 ```
 node index.js
 ```
@@ -70,6 +70,7 @@ Resultaat:
 Landing Page:
 http://localhost/kontich?f=html
 
+## Test Content Negociation in PostMan of Insomnia:
 
 
 ## Klaar voor de volgende stap
