@@ -11,7 +11,7 @@
 ## Stap 1:
 Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`, alsook swig: `npm i swig-templates`
 
-## Code for `/collections/:collectionId/items/:itemId`
+## Code for `/collections/:collectionId/items/:featureId`
 
 ```javascript
 
