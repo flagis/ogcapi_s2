@@ -102,5 +102,5 @@ JSON output
 Get raw [JSON](http://localhost/kontich/collections?f=json)
 
 ## Klaar voor de volgende stap
-https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
+https://github.com/flagis/ogcapi_s2/blob/master/step10/README.md
 
