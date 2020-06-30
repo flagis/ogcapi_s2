@@ -22,7 +22,7 @@ Type ".help" for more information.
 ```
 
 Prima moment om ook Postman https://www.postman.com/ te installeren (download, installeer, registreren is optioneel)
-(Meer hierover in step3)
+(Meer hierover in step3) (of gebruik je liever Insomnia: https://insomnia.rest/download/)
 
 
 ### Clone deze repo op je machine
