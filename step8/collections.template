@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Collections in this service</h2>
+    <table class="striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+        
+        <tr itemprop="dataset" itemscope="" itemtype="https://schema.org/Dataset">
+          <td data-label="name">
+            <meta itemprop="url" content=" {{ url }} collections/ {{ title }}">
+            <a title="Observations" href=" {{ url }} collections/ {{ title }}">
+              <span itemprop="name">{{ title }}</span></a>
+          </td>
+          <td itemprop="description" data-label="description">
+            {{ title}}
+          </td>
+        </tr>
+        
+
+      </tbody>
+    </table>
+</body>
+</html>

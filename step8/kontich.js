@@ -6,6 +6,8 @@ var path = require('path');
 var fs = require('fs');
 
 var files = fs.readdirSync(path.join(__dirname, "data")).filter(fn => fn.endsWith('.geojson'));
+for (i = 0; i < files.length; i++)
+  files[i] = files[i].replace(/\.[^/.]+$/, "");
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -16,11 +18,9 @@ router.use(function timeLog (req, res, next) {
 // define the home page route
 router.get('/', function (req, res) {
 
-console.log(files);
-
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f)
-    res.json(make.landingPage(urlParts.query.f))
+    res.send(make.landingPage("html"))
   else if ("json" == urlParts.query.f)
     res.json(make.landingPage(urlParts.query.f))
   else if ("html" == urlParts.query.f)
@@ -60,12 +60,10 @@ router.get('/collections', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f) {
-    res.header("Content-Type",'application/json');
-    res.sendFile(path.join(__dirname + '/data/collections.json'));
+    res.json(make.collections("json", files));
   }
   else if ("json" == urlParts.query.f) {
-    res.header("Content-Type",'application/json');
-    res.sendFile(path.join(__dirname + '/data/collections.json'));
+    res.json(make.collections("json", files));
   }
   else if ("html" == urlParts.query.f)
     res.sendFile(path.join(__dirname + '/data/collections.html'));

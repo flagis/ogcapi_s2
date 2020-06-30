@@ -11,10 +11,10 @@ router.use(function timeLog (req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-
+  
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f)
-    res.json(make.landingPage(urlParts.query.f))
+    res.send(make.landingPage("html"))
   else if ("json" == urlParts.query.f)
     res.json(make.landingPage(urlParts.query.f))
   else if ("html" == urlParts.query.f)

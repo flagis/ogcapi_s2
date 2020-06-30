@@ -74,15 +74,12 @@ console.log(json);
 }
 
 function collectionsHTML(collections) {
-    var tmpl = swig.compileFile(__dirname + '/collections.template'),
+    var tmpl = swig.compileFile(__dirname + '/landingPage.template'),
     renderedHtml = tmpl({
         title: serviceTitle,
         url: serviceUrl,
     });
     
-    collections.forEach(collection => {
-    });
- 
     return renderedHtml;
 }
 

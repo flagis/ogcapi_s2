@@ -9,7 +9,7 @@ function header(title, description) {
     return header;
 }
 
-function item(href, rel, type, title) {
+function link(href, rel, type, title) {
     var item = {};
     item.href = href;
     item.rel = rel;
@@ -26,11 +26,11 @@ const serviceUrl = "http://localhost/kontich/";
 function landingPageJSON() {
     var landingPage = header(serviceTitle, serviceDescription);
     
-    landingPage.links.push(item(serviceUrl,                 "self",         "application/json", "this document"));
-    landingPage.links.push(item(serviceUrl + "api",         "service-desc", "application/vnd.oai.openapi+json;version=3.0", "the API definition"));
-    landingPage.links.push(item(serviceUrl + "api.html",    "service-doc",  "text/html",        "the API documentation"));
-    landingPage.links.push(item(serviceUrl + "conformance", "conformance",  "application/json", "OGC API conformance classes implemented by this server"));
-    landingPage.links.push(item(serviceUrl + "collections", "data",         "application/json", "Information about the feature collections"));
+    landingPage.links.push(link(serviceUrl,                 "self",         "application/json", "this document"));
+    landingPage.links.push(link(serviceUrl + "api",         "service-desc", "application/vnd.oai.openapi+json;version=3.0", "the API definition"));
+    landingPage.links.push(link(serviceUrl + "api.html",    "service-doc",  "text/html",        "the API documentation"));
+    landingPage.links.push(link(serviceUrl + "conformance", "conformance",  "application/json", "OGC API conformance classes implemented by this server"));
+    landingPage.links.push(link(serviceUrl + "collections", "data",         "application/json", "Information about the feature collections"));
     
     return landingPage;
 }
