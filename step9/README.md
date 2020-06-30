@@ -9,7 +9,7 @@
 (Met dank aan Michel Stuyts, GIS-coördinator. Zie ook op https://michelstuyts.be/)
 
 ## Stap 1:
-Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
+Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save` , alsook swig: `npm i swig-templates`
 
 ## Code for `/collections/:collectionId`
 
@@ -19,19 +19,21 @@ Zoals altijd, ga naar de step8 directory met je command prompt, en installeer ex
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
 
-  if (!collectionsNames.includes(req.params.collectionId))
+  if (!files.includes(req.params.collectionId))
   {
     res.status(404).send("The requested URL " + req.url + " was not found on this server");
     return;
   }
 
   var urlParts = url.parse(req.url, true);
-  var ext = urlParts.query.f;
-  if (null == ext)
-    ext = "html";
-  ext = "." + ext;
-
-   res.sendFile(path.join(__dirname + '/data/' + req.params.collectionId + ext));
+  if (null == urlParts.query.f) 
+    res.send(make.collection("html", req.params.collectionId));
+  else if ("json" == urlParts.query.f) 
+    res.json(make.collection("json", req.params.collectionId));
+  else if ("html" == urlParts.query.f)
+    res.send(make.collection("html", req.params.collectionId));
+  else
+    res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}") 
 })
 
 ...
@@ -100,5 +102,5 @@ JSON output
 Get raw [JSON](http://localhost/kontich/collections?f=json)
 
 ## Klaar voor de volgende stap
-https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
+https://github.com/flagis/ogcapi_s2/blob/master/step10/README.md
 

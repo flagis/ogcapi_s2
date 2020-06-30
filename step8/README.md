@@ -9,7 +9,18 @@
 (Met dank aan Michel Stuyts, GIS-coördinator. Zie ook op https://michelstuyts.be/)
 
 ## Stap 1:
-Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`
+Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save` alsook swig: `npm i swig-templates`
+
+## Lezen van de Datasets
+
+```javascript
+var path = require('path');
+var fs = require('fs');
+
+var files = fs.readdirSync(path.join(__dirname, "data")).filter(fn => fn.endsWith('.geojson'));
+for (i = 0; i < files.length; i++)
+  files[i] = files[i].replace(/\.[^/.]+$/, "");
+```
 
 ## Code voor `/collections`
 
@@ -20,14 +31,17 @@ Zoals altijd, ga naar de step8 directory met je command prompt, en installeer ex
 router.get('/collections', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f)
-    res.json(collections)
-  else if ("json" == urlParts.query.f)
-    res.json(collections)
+  if (null == urlParts.query.f) {
+    res.send(make.collections("html", files));
+  }
+  else if ("json" == urlParts.query.f) {
+    res.json(make.collections("json", files));
+  }
   else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/data/collections.html'));
+    res.send(make.collections("html", files));
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
+
 })
 
 ...
