@@ -68,16 +68,22 @@ function collectionsJSON(collections) {
        json.collections.push(item);
     });
 
-console.log(json);
-
     return json;
 }
 
 function collectionsHTML(collections) {
-    var tmpl = swig.compileFile(__dirname + '/landingPage.template'),
+
+    var items = [];
+    collections.forEach(collection => {
+        var item = {};
+        item.url = serviceUrl;
+        item.title = collection;
+        items.push(item);
+    });
+
+    var tmpl = swig.compileFile(__dirname + '/collections.template'),
     renderedHtml = tmpl({
-        title: serviceTitle,
-        url: serviceUrl,
+        collections: items,
     });
     
     return renderedHtml;
@@ -89,4 +95,43 @@ function collections(t, collections) {
     return collectionsHTML(collections);
 }
 
-module.exports = { landingPage, collections }
+//-------------------------------------------------------------------------------------
+
+function collectionJSON(collection) {
+    var json = {}
+
+    json.links = []
+    json.links.push(link(serviceUrl + "collections", "self", "application/json", "Metadata about the feature collections"));
+    
+    json.collections = [];
+
+    var item = header(collection, collection);
+    item.links.push(link(serviceUrl + "collections/" + collection + "/items", "item", "application/json", collection));
+    json.collections.push(item);
+
+    return json;
+}
+
+function collectionHTML(collection) {
+
+    var item = {};
+    item.url = serviceUrl;
+    item.title = collection;
+
+    var tmpl = swig.compileFile(__dirname + '/collection.template'),
+    renderedHtml = tmpl({
+        collection: item,
+    });
+    
+    return renderedHtml;
+}
+
+function collection(t, collection) {
+    if (t == "json")
+        return collectionJSON(collection);
+    return collectionHTML(collection);
+}
+
+//-------------------------------------------------------------------------------------
+
+module.exports = { landingPage, collections, collection }

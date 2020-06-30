@@ -74,15 +74,22 @@ console.log(json);
 }
 
 function collectionsHTML(collections) {
+
+    var items = [];
+    collections.forEach(collection => {
+        var item = {};
+        item.url = serviceUrl;
+        item.title = collection;
+        items.push(item);
+    });
+
+    console.log(items);
+
     var tmpl = swig.compileFile(__dirname + '/collections.template'),
     renderedHtml = tmpl({
-        title: serviceTitle,
-        url: serviceUrl,
+        collections: items,
     });
     
-    collections.forEach(collection => {
-    });
- 
     return renderedHtml;
 }
 

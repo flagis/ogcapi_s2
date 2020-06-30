@@ -66,10 +66,12 @@ router.get('/collections', function (req, res) {
     res.json(make.collections("json", files));
   }
   else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/data/collections.html'));
+    res.send(make.collections("html", files));
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
-})
+
+//    res.sendFile(path.join(__dirname + '/data/collections.html'));
+  })
 
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {

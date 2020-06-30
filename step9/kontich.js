@@ -3,6 +3,7 @@ var router = express.Router()
 var url = require('url');
 var make = require('./landingPage');
 var path = require('path');
+var fs = require('fs');
 
 var files = fs.readdirSync(path.join(__dirname, "data")).filter(fn => fn.endsWith('.geojson'));
 for (i = 0; i < files.length; i++)
@@ -58,14 +59,12 @@ router.get('/api.html', function (req, res) {
 router.get('/collections', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f) {
+  if (null == urlParts.query.f) 
+    res.send(make.collections("html", files));
+  else if ("json" == urlParts.query.f) 
     res.json(make.collections("json", files));
-  }
-  else if ("json" == urlParts.query.f) {
-    res.json(make.collections("json", files));
-  }
   else if ("html" == urlParts.query.f)
-    res.sendFile(path.join(__dirname + '/data/collections.html'));
+    res.send(make.collections("html", files));
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
 })
@@ -80,12 +79,14 @@ router.get('/collections/:collectionId', function (req, res) {
   }
 
   var urlParts = url.parse(req.url, true);
-  var ext = urlParts.query.f;
-  if (null == ext)
-    ext = "html";
-  ext = "." + ext;
-
-   res.sendFile(path.join(__dirname + '/data/' + req.params.collectionId + ext));
+  if (null == urlParts.query.f) 
+    res.send(make.collection("html", req.params.collectionId));
+  else if ("json" == urlParts.query.f) 
+    res.json(make.collection("json", req.params.collectionId));
+  else if ("html" == urlParts.query.f)
+    res.send(make.collection("html", req.params.collectionId));
+  else
+    res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}") 
 })
 
 // define the about route
