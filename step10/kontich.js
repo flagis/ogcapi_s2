@@ -5,9 +5,17 @@ var make = require('./make');
 var path = require('path');
 var fs = require('fs');
 
-var files = fs.readdirSync(path.join(__dirname, "data")).filter(fn => fn.endsWith('.geojson'));
-for (i = 0; i < files.length; i++)
-  files[i] = files[i].replace(/\.[^/.]+$/, "");
+var fileNames = fs.readdirSync(path.join(__dirname, "data")).filter(fn => fn.endsWith('.geojson'));
+
+var dataDict = {};
+fileNames.forEach(fileName => {
+  var rawData = fs.readFileSync(path.join(__dirname, "data", fileName));
+  var geojson = JSON.parse(rawData);
+
+  var fn = fileName.replace(/\.[^/.]+$/, "");
+
+  dataDict[fn] = geojson;
+});
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -59,28 +67,53 @@ router.get('/api.html', function (req, res) {
 router.get('/collections', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
-  if (null == urlParts.query.f) {
-    res.json(make.collections("json", files));
-  }
-  else if ("json" == urlParts.query.f) {
-    res.json(make.collections("json", files));
-  }
+  if (null == urlParts.query.f) 
+    res.send(make.collections("html", dataDict));
+  else if ("json" == urlParts.query.f) 
+    res.json(make.collections("json", dataDict));
   else if ("html" == urlParts.query.f)
-    res.send(make.collections("html", files));
+    res.send(make.collections("html", dataDict));
   else
     res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}")
-
-//    res.sendFile(path.join(__dirname + '/data/collections.html'));
-  })
+})
 
 // define the about route
 router.get('/collections/:collectionId', function (req, res) {
-  res.send('collections/:collectionId')
+
+  if (null == dataDict[req.params.collectionId])
+  {
+    res.status(404).send("The requested URL " + req.url + " was not found on this server");
+    return;
+  }
+
+  var urlParts = url.parse(req.url, true);
+  if (null == urlParts.query.f) 
+    res.send(make.collection("html", req.params.collectionId));
+  else if ("json" == urlParts.query.f) 
+    res.json(make.collection("json", req.params.collectionId));
+  else if ("html" == urlParts.query.f)
+    res.send(make.collection("html", req.params.collectionId));
+  else
+    res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}") 
 })
 
 // define the about route
 router.get('/collections/:collectionId/items', function (req, res) {
-  res.send('collections/:collectionId/items')
+  if (null == dataDict[req.params.collectionId])
+  {
+    res.status(404).send("The requested URL " + req.url + " was not found on this server");
+    return;
+  }
+
+  var urlParts = url.parse(req.url, true);
+  if (null == urlParts.query.f) 
+    res.send(make.items("html", req.params.collectionId, dataDict[req.params.collectionId]));
+  else if ("json" == urlParts.query.f) 
+    res.json(make.items("json", req.params.collectionId, dataDict[req.params.collectionId]));
+  else if ("html" == urlParts.query.f)
+    res.send(make.items("html", req.params.collectionId, dataDict[req.params.collectionId]));
+  else
+    res.json(400, "{'code': 'InvalidParameterValue', 'description': 'Invalid format'}") 
 })
 
 // define the about route

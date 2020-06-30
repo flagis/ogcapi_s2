@@ -62,11 +62,11 @@ function collectionsJSON(collections) {
     
     json.collections = [];
 
-    collections.forEach(collection => {
-       var item = header(collection, collection);
-       item.links.push(link(serviceUrl + "collections/" + collection + "/items", "item", "application/json", collection));
+    for (var collectionId in collections) {
+       var item = header(collectionId, collectionId);
+       item.links.push(link(serviceUrl + "collections/" + collectionId + "/items", "item", "application/json", collectionId));
        json.collections.push(item);
-    });
+    };
 
     return json;
 }
@@ -74,12 +74,12 @@ function collectionsJSON(collections) {
 function collectionsHTML(collections) {
 
     var items = [];
-    collections.forEach(collection => {
+    for (var collectionId in collections) {
         var item = {};
         item.url = serviceUrl;
-        item.title = collection;
+        item.title = collectionId;
         items.push(item);
-    });
+    };
 
     var tmpl = swig.compileFile(__dirname + '/collections.template'),
     renderedHtml = tmpl({
@@ -97,7 +97,7 @@ function collections(t, collections) {
 
 //-------------------------------------------------------------------------------------
 
-function collectionJSON(collection) {
+function collectionJSON(collectionId) {
     var json = {}
 
     json.links = []
@@ -105,18 +105,18 @@ function collectionJSON(collection) {
     
     json.collections = [];
 
-    var item = header(collection, collection);
-    item.links.push(link(serviceUrl + "collections/" + collection + "/items", "item", "application/json", collection));
+    var item = header(collectionId, collectionId);
+    item.links.push(link(serviceUrl + "collections/" + collectionId + "/items", "item", "application/json", collectionId));
     json.collections.push(item);
 
     return json;
 }
 
-function collectionHTML(collection) {
+function collectionHTML(collectionId) {
 
     var item = {};
     item.url = serviceUrl;
-    item.title = collection;
+    item.title = collectionId;
 
     var tmpl = swig.compileFile(__dirname + '/collection.template'),
     renderedHtml = tmpl({
@@ -126,12 +126,39 @@ function collectionHTML(collection) {
     return renderedHtml;
 }
 
-function collection(t, collection) {
+function collection(t, collectionId) {
     if (t == "json")
-        return collectionJSON(collection);
-    return collectionHTML(collection);
+        return collectionJSON(collectionId);
+    return collectionHTML(collectionId);
 }
 
 //-------------------------------------------------------------------------------------
 
-module.exports = { landingPage, collections, collection }
+function itemsJSON(collectionId, geojson) {
+    return JSON.stringify(geojson);
+}
+
+function itemsHTML(collectionId, geojson) {
+
+    var item = {};
+    item.url = serviceUrl;
+    item.title = collectionId;
+    item.geojson = JSON.stringify(geojson);
+
+    var tmpl = swig.compileFile(__dirname + '/items.template'),
+    renderedHtml = tmpl({
+        collection: item,
+    });
+    
+    return renderedHtml;
+}
+
+function items(t, collectionId, geojson) {
+    if (t == "json")
+        return itemsJSON(collectionId, geojson);
+    return itemsHTML(collectionId, geojson);
+}
+
+//-------------------------------------------------------------------------------------
+
+module.exports = { landingPage, collections, collection, items }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+</head>
+
+<body>
+
+<h1>Data from collection "{{ collection.title }}"</h1>
+
+<h2>Links.</h2>
+<p>self = <a href="{{ collection.url }}collections/{{ collection.title }}/items">{{ collection.title }}</a> (application/json)</p>
+
+<h2>Features</h2>
+
+ <div id="mapid  style="width: 600px; height: 400px; position: relative;""></div>
+
+<h2>JSON Output</h2>
+<p>
+{{ collection.geojson }}
+</p>
+
+</body>
+</html>

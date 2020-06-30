@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var url = require('url');
-var make = require('./landingPage');
+var make = require('./make');
 var path = require('path');
 var fs = require('fs');
 
@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
 
   var urlParts = url.parse(req.url, true);
   if (null == urlParts.query.f)
-    res.json(make.landingPage("html"))
+    res.send(make.landingPage("html"))
   else if ("json" == urlParts.query.f)
     res.json(make.landingPage(urlParts.query.f))
   else if ("html" == urlParts.query.f)
@@ -91,7 +91,8 @@ router.get('/collections/:collectionId', function (req, res) {
 
 // define the about route
 router.get('/collections/:collectionId/items', function (req, res) {
-  res.send('collections/:collectionId/items')
+  console.log(req.params);
+  res.send('collections/:collectionId/items/:item')
 })
 
 // define the about route
