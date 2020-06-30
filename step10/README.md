@@ -76,5 +76,5 @@ JSON Output
 
 
 ## Klaar voor de volgende stap
-https://github.com/flagis/ogcapi_s2/blob/master/step9/README.md
+https://github.com/flagis/ogcapi_s2/blob/master/step11/README.md
 
