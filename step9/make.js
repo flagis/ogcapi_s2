@@ -134,4 +134,4 @@ function collection(t, collectionId) {
 
 //-------------------------------------------------------------------------------------
 
-module.exports = { landingPage, collections, collection, items }
+module.exports = { landingPage, collections, collection }
