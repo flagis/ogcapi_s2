@@ -9,7 +9,7 @@
 <p>{{ collection.title }}</p>
 
 <h4>Links for the collection</h4>
-<p>item = <a href="{{ collection.url }}collections/{{ collection.title }}/items">{{ collection.title }}</a> (application/json)</p>
+<p>items = <a href="{{ collection.url }}collections/{{ collection.title }}/items">{{ collection.title }}</a> (application/json)</p>
 
 <h2>Links</h2>
 
