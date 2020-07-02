@@ -82,6 +82,8 @@ router.get('/collections/:collectionId', function (req, res) {
 
   if (null == dataDict[req.params.collectionId])
   {
+    // If the parameter collectionId does not exist on the server, 
+    // the status code of the response will be 404 (see Table 2).
     res.status(404).send("The requested URL " + req.url + " was not found on this server");
     return;
   }
