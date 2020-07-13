@@ -1,15 +1,15 @@
 # Wat heeft Kontich te bieden qua geo bestanden? (Cont)
 
-- groendienst
+- Frituren
 - Groepsopvang Babys En Peuters 
 - Openlucht Sportveld 
-- september kermis
 - Sport lokaal 
+- Water
 
-(Met dank aan Michel Stuyts, GIS-coördinator. Zie ook op https://michelstuyts.be/)
+(Met dank aan Michel Stuyts, GIS-coördinator. Zie ook op https://michelstuyts.be/ - https://stuyts.xyz)
 
 ## Stap 1:
-Zoals altijd, ga naar de step8 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`, alsook swig: `npm i swig-templates`
+Zoals altijd, ga naar de step12 directory met je command prompt, en installeer express als het de eerste keer dat je node gaat opstarten in deze directory. `npm install express --save`, alsook swig: `npm i swig-templates`
 
 ## Code for `/collections/:collectionId/items/:featureId`
 
