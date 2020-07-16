@@ -6,12 +6,13 @@ function getMetaData (serviceUrl, document) {
   content.id          = document.name // required
   content.title       = document.name
   content.description = 'dbEntry.description'
-  content.links = [] // required
-  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=html`, rel: `item`, type: `text/html`,            title: `This document in HTML` } )
-  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=json`, rel: `item`, type: `application/json`,     title: `This document` } )
-  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=json`, rel: `item`, type: `application/geo+json`, title: `This document` } )
+  content.links = []
+  // Requirement 15 A and B
+  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=json`, rel: `items`, type: `application/geo+json`, title: `This document` } )
+  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=html`, rel: `items`, type: `text/html`,            title: `This document in HTML` } )
   content.extent = {} 
   content.extent.spatial = {}
+  // Requirement 16 A and B
   content.extent.spatial.bbox = []
   content.extent.spatial.bbox.push([-180, -90, 180, 90])
   content.extent.temporal = {}
