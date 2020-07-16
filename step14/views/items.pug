@@ -2,21 +2,21 @@
 
 doctype html
 html(lang='en')
- head
-   title Metadata about the feature collections
-   link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css')
-   script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js')
+head
+  title Metadata about the feature collections
+  link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css')
+  script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js')
  
- body
+body
   h1 Data from collection 
     h2 Links
       p self = 
         - var href = json.links.filter(l => l.rel === 'alternate')[0].href
         a(href= href) This document
-      if json.links[2]
+      - var next = json.links.filter(l => l.rel === 'next')[0]
+      if next
         p next = 
-        - var href = json.links.filter(l => l.rel === 'next')[0].href
-        a(href= href) Next results
+        a(href= next.href) Next results
     h2 Features
     #map(style='width: 600px; height: 400px; position: relative;')
     script.
@@ -27,4 +27,4 @@ html(lang='en')
     h2 JSON Output
       p Get raw 
         a(href= json.links[1].href) JSON
-          pre !{JSON.stringify(json, null, 2)}
+        pre !{JSON.stringify(json, null, 1)}

@@ -9,6 +9,8 @@ function get (req, res) {
 
   var serviceUrl = utils.getServiceUrl(req)
   
+  debug(`landingPage serviceUrl ${serviceUrl}`)
+
   landingPage.get(serviceUrl, function(err, content) {
 
     debug(`landingPage content %j`, content)

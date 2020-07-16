@@ -10,6 +10,8 @@ function get (req, res) {
   var collectionId = req.params.collectionId
   var serviceUrl = utils.getServiceUrl(req)
 
+  debug(`items serviceUrl ${serviceUrl} collectionId ${collectionId}`)
+
   var options = {}
   options.skip  = req.query.startIndex || 0
   options.limit = req.query.limit || 10
@@ -18,9 +20,11 @@ function get (req, res) {
   delete req.query.startIndex; 
   delete req.query.limit; 
 
-  var query = {} // TODO
+  var query = {} // TODO, take from req.query
 
   items.get(serviceUrl, collectionId, query, options, function(err, content) {
+
+    debug(`items content %j`, content)
 
     var accept = accepts(req)
 
@@ -29,7 +33,7 @@ function get (req, res) {
       res.status(200).json(content)
       break
     case `html`:
-      res.render(`items`, { content: content })
+      res.status(200).render(`items`, { content: content })
       break
     default:
       res.status(400).json(`{'code': 'InvalidParameterValue', 'description': '${accept} is an invalid format'}`)

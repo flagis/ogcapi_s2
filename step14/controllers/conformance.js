@@ -13,6 +13,8 @@ function get (req, res) {
   debug(`conformance ${req.url}`)
 
   conformance.get(function(err, content) {
+    debug(`conformance content %j`, content)
+
     res.status(200).json(content) // Requirement 6 A
   })
 }

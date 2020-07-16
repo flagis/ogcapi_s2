@@ -3,6 +3,7 @@ var mongo = require('../database');
 var utils = require('../utils/utils')
   
 function getMetaData (serviceUrl, document) {
+  
   var content = {}
   content.type = 'FeatureCollection'
   content.links = []
@@ -26,14 +27,18 @@ function get (serviceUrl, collectionId, query, options, callback) {
       
   debug(`items ${serviceUrl}`)
 
-  // remove any trailing /
   var root = serviceUrl.pathname.replace(/^\/+/, '') // remove any trailing /
 
   var query = { type: 'FeatureCollection', name: `${collectionId}` }
-  mongo.db().collection(`${root}`).findOne(query, options, function(err, document) { // QUESTION: limit and skip for features, not the documents
+
+  mongo.db().collection(`${root}`)
+            .findOne(query, options, function(err, document) { // QUESTION: limit and skip for features, not the documents
+              
     if(err) callback(err, undefined)
 
     var content = getMetaData(serviceUrl, document)
+
+    debug(`items content ${content}`)
 
     if (callback)
       return callback(undefined, content)
