@@ -36,6 +36,11 @@
 
 </script>
 <h2>JSON Output</h2>
+
+<h3>Raw JSON</h3>
+<p>Get raw <a href="{{ collection.url }}collections/{{ collection.title }}/items?f=json">JSON</a></p>
+
+<h3>JSON content</h3>
 <p>
 {{ collection.geojson }}
 </p>

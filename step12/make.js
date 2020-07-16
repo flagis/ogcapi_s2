@@ -135,7 +135,7 @@ function collection(t, collectionId) {
 //-------------------------------------------------------------------------------------
 
 function itemsJSON(collectionId, geojson) {
-    return JSON.stringify(geojson);
+    return JSON.parse(JSON.stringify(geojson));
 }
 
 function itemsHTML(collectionId, geojson) {
