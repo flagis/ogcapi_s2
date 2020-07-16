@@ -1,9 +1,12 @@
 const accepts = require('accepts')
+const debug = require('debug')('controller')
 var items = require('../models/items.js')
 var utils = require('../utils/utils')
 
 function get (req, res) {
-    
+  
+  debug(`items ${req.url}`)
+
   var collectionId = req.params.collectionId
   var serviceUrl = utils.getServiceUrl(req)
 

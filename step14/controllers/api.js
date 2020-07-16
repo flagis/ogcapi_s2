@@ -1,7 +1,10 @@
+const debug = require('debug')('controller')
 const accepts = require('accepts')
 var path = require('path');
 
 function get (req, res) {
+
+  debug(`api ${req.url}`)
 
   var accept = accepts(req)
 

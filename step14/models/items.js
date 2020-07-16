@@ -1,3 +1,4 @@
+const debug = require('debug')('models')
 var mongo = require('../database');
 var utils = require('../utils/utils')
   
@@ -23,6 +24,8 @@ function getMetaData (serviceUrl, document) {
 
 function get (serviceUrl, collectionId, query, options, callback) {
       
+  debug(`items ${serviceUrl}`)
+
   // remove any trailing /
   var root = serviceUrl.pathname.replace(/^\/+/, '') // remove any trailing /
 

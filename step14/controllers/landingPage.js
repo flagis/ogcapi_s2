@@ -1,12 +1,17 @@
+const debug = require('debug')('controller')
 const accepts = require('accepts')
 var landingPage = require('../models/landingPage.js');
 var utils = require('../utils/utils')
 
 function get (req, res) {
 
+  debug(`landingPage ${req.url}`)
+
   var serviceUrl = utils.getServiceUrl(req)
   
   landingPage.get(serviceUrl, function(err, content) {
+
+    debug(`landingPage content %j`, content)
 
     // http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#encodings
     var accept = accepts(req)

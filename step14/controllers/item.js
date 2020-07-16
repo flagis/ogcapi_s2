@@ -1,6 +1,9 @@
 const accepts = require('accepts')
+const debug = require('debug')('controller')
 
 function get (req, res) {
+
+  debug(`item ${req.url}`)
 
   var accept = req.headers['accept']
   

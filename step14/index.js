@@ -2,7 +2,7 @@ const compression = require('compression')
 const helmet = require('helmet');
 const express = require('express')
 const favicon = require('serve-favicon')
-const debug = require('debug')('http')
+const debug = require('debug')('route')
 
 var database = require('./database')
 var encodings = require('./middlewares/encodings')

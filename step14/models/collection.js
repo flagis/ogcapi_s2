@@ -1,3 +1,4 @@
+const debug = require('debug')('models')
 var mongo = require('../database');
     
 function getMetaData (serviceUrl, document) {
@@ -27,6 +28,8 @@ function getMetaData (serviceUrl, document) {
 
 function get (serviceUrl, collectionId, callback) {
     
+  debug(`collection ${serviceUrl}`)
+
   var root = serviceUrl.pathname.replace(/^\/+/, '') // remove any trailing /
 
   var query = { type: 'FeatureCollection', name: `${collectionId}` };

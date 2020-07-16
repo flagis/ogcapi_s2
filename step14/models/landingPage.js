@@ -1,6 +1,9 @@
+const debug = require('debug')('models')
 var mongo = require('../database');
     
 function get  (serviceUrl, callback) {
+
+  debug(`landingPage ${serviceUrl}`)
 
   var root = serviceUrl.pathname.replace(/^\/+/, '') // remove any trailing /
 
@@ -27,6 +30,8 @@ function get  (serviceUrl, callback) {
     content.links.push({ href: `${serviceUrl}/collections?f=html`, rel: `data`,         type: `text/html`,                                    title: `Information about the feature collections` } )
     content.links.push({ href: `${serviceUrl}/?f=html`,            rel: `alternate`,    type: `text/html`,                                    title: `this document` } )
     content.links.push({ href: `${serviceUrl}/?f=json`,            rel: `self`,         type: `application/json`,                             title: `this document in json` } )
+
+    debug(`landingPage content ${content}`)
 
     return callback(undefined, content);
   })

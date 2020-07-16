@@ -1,3 +1,5 @@
+const debug = require('debug')('models')
+
 function get () {
 
   var content = {}

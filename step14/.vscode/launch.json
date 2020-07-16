@@ -14,7 +14,7 @@
             ],
             "program": "${workspaceFolder}/app.js",
             "env": {
-				"DEBUG": "http",
+				"DEBUG": "*",
 			},
         }
     ]

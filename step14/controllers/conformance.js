@@ -1,3 +1,4 @@
+const debug = require('debug')('controller')
 var conformance = require('../models/conformance.js')
 
 // To support "generic" clients that want to access multiple OGC API Features implementations
@@ -8,6 +9,8 @@ var conformance = require('../models/conformance.js')
 // and list all OGC API conformance classes that the server conforms to.
 
 function get (req, res) { 
+
+  debug(`conformance ${req.url}`)
 
   conformance.get(function(err, content) {
     res.status(200).json(content) // Requirement 6 A
