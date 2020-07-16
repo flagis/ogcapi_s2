@@ -6,12 +6,16 @@
     "configurations": [
         {
             "type": "node",
+            "outputCapture": "console",
             "request": "launch",
             "name": "Launch Program",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/app.js",
+            "env": {
+				"DEBUG": "http",
+			},
         }
     ]
 }

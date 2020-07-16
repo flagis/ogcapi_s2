@@ -11,10 +11,12 @@ html(lang='en')
   h1 Data from collection 
     h2 Links
       p self = 
-        a(href= json.links[0].href) This document
+        - var href = json.links.filter(l => l.rel === 'alternate')[0].href
+        a(href= href) This document
       if json.links[2]
         p next = 
-          a(href= json.links[2].href) Next results
+        - var href = json.links.filter(l => l.rel === 'next')[0].href
+        a(href= href) Next results
     h2 Features
     #map(style='width: 600px; height: 400px; position: relative;')
     script.

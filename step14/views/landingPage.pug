@@ -9,7 +9,7 @@ html(lang='en')
     h2 #{json.description}
     h3 Collections
       ul
-        - var href = json.links.filter(l => l.rel === 'data')[0].href
+        - var href = json.links.filter(l => l.rel === 'data' && l.type === 'text/html')[0].href
         a(href= href) View the collections in this service
     h3 Conformance
       ul

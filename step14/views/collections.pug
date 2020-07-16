@@ -13,5 +13,5 @@ html(lang='en')
     h3 #{collection.title}
     h4 Links for the collection
        p items = 
-         - var href = collection.links.filter(l => l.rel === 'items')[0].href
+         - var href = collection.links.filter(l => l.rel === 'items' && l.type === 'text/html')[0].href
          a(href= href ) #{collection.title}

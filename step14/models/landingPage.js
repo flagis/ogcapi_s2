@@ -24,6 +24,7 @@ function get  (serviceUrl, callback) {
     content.links.push({ href: `${serviceUrl}/api.html`,           rel: `service-doc`,  type: `text/html`,                                    title: `the API documentation` } )
     content.links.push({ href: `${serviceUrl}/conformance`,        rel: `conformance`,  type: `application/json`,                             title: `OGC API conformance classes implemented by this server` } )
     content.links.push({ href: `${serviceUrl}/collections?f=json`, rel: `data`,         type: `application/json`,                             title: `Information about the feature collections` } )
+    content.links.push({ href: `${serviceUrl}/collections?f=html`, rel: `data`,         type: `text/html`,                                    title: `Information about the feature collections` } )
     content.links.push({ href: `${serviceUrl}/?f=html`,            rel: `alternate`,    type: `text/html`,                                    title: `this document` } )
     content.links.push({ href: `${serviceUrl}/?f=json`,            rel: `self`,         type: `application/json`,                             title: `this document in json` } )
 

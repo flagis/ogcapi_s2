@@ -1,12 +1,15 @@
 const compression = require('compression')
+const helmet = require('helmet');
 const express = require('express')
 const favicon = require('serve-favicon')
+const debug = require('debug')('http')
 
 var database = require('./database')
 var encodings = require('./middlewares/encodings')
 
 const app = express()
 
+app.use(helmet())
 app.use(compression())
 
 app.use(favicon('./public/favicon.ico'))
@@ -29,7 +32,7 @@ database.connect( function(err) {
 
     collections.forEach( root => {
       app.use(`/${root}.:ext?`, require('./route'))
-      console.log(`/${root} running`)
+      debug(`/${root} running`)
     })
   })
 })
