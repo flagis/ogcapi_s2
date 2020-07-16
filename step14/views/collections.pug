@@ -10,7 +10,8 @@ html(lang='en')
 
    each collection in json.collections
 
-     h3 #{collection.title}
-     h4 Links for the collection
+    h3 #{collection.title}
+    h4 Links for the collection
        p items = 
-         a(href= collection.links[0].href ) #{collection.title}
+         - var href = collection.links.filter(l => l.rel === 'item')[0].href
+         a(href= href ) #{collection.title}
