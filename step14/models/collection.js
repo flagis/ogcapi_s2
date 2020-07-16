@@ -1,0 +1,47 @@
+var mongo = require('../database');
+    
+function getMetaData (serviceUrl, document) {
+
+  var content = {}
+  content.id          = document.name // required
+  content.title       = document.name
+  content.description = 'dbEntry.description'
+  content.links = [] // required
+  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=html`, rel: `item`, type: `text/html`,            title: `This document in HTML` } )
+  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=json`, rel: `item`, type: `application/json`,     title: `This document` } )
+  content.links.push({ href: `${serviceUrl}/collections/${content.title}/items?f=json`, rel: `item`, type: `application/geo+json`, title: `This document` } )
+  content.extent = {} 
+  content.extent.spatial = {}
+  content.extent.spatial.bbox = []
+  content.extent.spatial.bbox.push([-180, -90, 180, 90])
+  content.extent.temporal = {}
+  content.extent.temporal.interval = []
+  content.extent.temporal.interval.push(['2010-02-15T12:34:56Z', null])
+  content.itemType = 'feature'
+  content.crs = []
+  content.crs.push(document.crs.properties.name)
+
+  return content
+}
+
+function get (serviceUrl, collectionId, callback) {
+    
+  var root = serviceUrl.pathname.replace(/^\/+/, '') // remove any trailing /
+
+  var query = { type: 'FeatureCollection', name: `${collectionId}` };
+  var projection = { name: 1, crs: 1, _id: 1 }
+  mongo.db().collection(`${root}`).findOne(query, projection, function(err, document) {
+      if(err) callback(err, undefined)
+  
+      var content = getMetaData(serviceUrl, document) // QUESTION 'getMetaData' is not defined
+
+      if (callback)
+        return callback(undefined, content)
+      return content
+    })
+}
+
+module.exports = {
+  get, 
+  getMetaData,
+}

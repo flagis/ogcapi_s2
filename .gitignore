@@ -1,3 +1,4 @@
+.DS_Store
 step1/node_modules
 step1/package-lock.json
 step2/node_modules
@@ -24,3 +25,7 @@ step12/node_modules
 step12/package-lock.json
 step13/node_modules
 step13/package-lock.json
+step14/node_modules
+step14/package-lock.json
+step14/yarn.lock
+

@@ -1,0 +1,24 @@
+- var json= content
+
+doctype html
+html(lang='en')
+  head
+    title #{json.title}
+  body
+    h1 #{json.title}
+    h2 #{json.description}
+    h3 Collections
+      p 
+      - var href = json.links.filter(l => l.rel === 'data')[0].href
+      a(href= href) View the collections in this service
+    h3 Conformance
+      p 
+      - var href = json.links.filter(l => l.rel === 'conformance')[0].href
+      a(href= href) View the conformance classes of this service
+    h3 API Definition
+      p 
+      - var href = json.links.filter(l => l.rel === 'service-doc')[0].href
+      a(href= href) Documentation
+      p
+      - var href = json.links.filter(l => l.rel === 'service-desc')[0].href
+      a(href= href) OpenAPI Document
