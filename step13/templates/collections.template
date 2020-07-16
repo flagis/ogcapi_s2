@@ -2,6 +2,7 @@
 <html>
 <body>
 
+  <h1>Metadata about the feature collections</h1>
     <h2>Collections in this service</h2>
     <table class="striped">
       <thead>
@@ -27,6 +28,17 @@
 
       </tbody>
     </table>
+    
+    <h2>Links</h2>
+
+    <p>
+        self = 
+    <a href="{{ collection.url }}">Metadata about the feature collections</a>
+    (application/json)
+    </p>
+
+    <h2>JSON output</h2>
+    <p>Get raw <a href="{{ collection.url }}?f=json">JSON</a></p>
 
 </body>
 </html>
