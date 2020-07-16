@@ -38,7 +38,6 @@ var encodings = function(req, res, next) {
   var mediaType = req.query.f 
                || req.query.accept 
                || path.extname(req.path).replace(/^\./, '') 
-//               || req.headers['accept']
 
   delete req.query.f; 
   delete req.query.accept; 
