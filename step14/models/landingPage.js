@@ -7,10 +7,10 @@ function get  (serviceUrl, callback) {
 
   var root = serviceUrl.pathname.replace(/^\/+/, '') // remove any trailing /
 
-  var query = { type: "ServerMetadata" }
-  mongo.db().collection(root).findOne(query, function(err, result) {
-
-    if (err) return callback (err, undefined)
+//  var query = { type: "ServerMetadata" }
+//  mongo.db().collection(root).findOne(query, function(err, result) {
+//
+//    if (err) return callback (err, undefined)
 
     // Requirement 2 A & B
     // The content of that response SHALL be based upon the OpenAPI 3.0 schema landingPage.yaml (http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/landingPage.yaml)
@@ -20,8 +20,8 @@ function get  (serviceUrl, callback) {
     // - /conformance (relation type `conformance`)
     // - /collections (relation type `data`)
     var content = {}
-    content.title = result.title // Requirement 2 B
-    content.description = result.description              
+    content.title =' result.title' // Requirement 2 B
+    content.description = 'result.description'              
     content.links = []
     content.links.push({ href: `${serviceUrl}/api?f=json`,         rel: `service-desc`, type: `application/vnd.oai.openapi+json;version=3.0`, title: `the API definition` } )
     content.links.push({ href: `${serviceUrl}/api.html`,           rel: `service-doc`,  type: `text/html`,                                    title: `the API documentation` } )
@@ -34,7 +34,7 @@ function get  (serviceUrl, callback) {
     debug(`landingPage content ${content}`)
 
     return callback(undefined, content);
-  })
+//  })
 }
 
 module.exports = {
