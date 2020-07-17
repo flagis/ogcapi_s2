@@ -2,14 +2,28 @@
 
 doctype html
 html(lang='en')
- head
-   title Metadata about the feature collection      
- body
-   h1 Metadata about the feature collection
+  head
+    title Metadata about the feature collections
+  body
+    h1 Metadata about the feature collections
+    h2 Collections
 
-   h2 #{json.title}
-   
-   h3 Links for the collection
-     p items = 
-       - var href = json.links.filter(l => l.rel === 'items' && l.type === 'text/html')[0].href
-       a(href= href ) #{json.title}
+    h3 #{json.title}
+    p todo: description
+    h4 Links for the collection
+      each link in json.links
+        p #{link.rel} = 
+          a(href= link.href)  #{link.title} 
+          | (#{link.type})
+    h2 Links
+    each link in json.links
+      p #{link.rel} = 
+        a(href= link.href)  #{link.title} 
+        | (#{link.type})
+    h2 JSON output
+    p Get raw 
+      - var href = json.links.filter(l => l.rel === 'items')[0].href
+      a(href= href) JSON
+    .jsonContainer
+      .renderjson
+        pre !{JSON.stringify(json, null, 1)}

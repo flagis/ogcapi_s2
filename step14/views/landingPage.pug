@@ -3,22 +3,18 @@
 doctype html
 html(lang='en')
   head
-    title #{json.title}
+    title NodeJS ExpressJS OGC API Features - Part 1: Core
   body
-    h1 #{json.title}
-    h2 #{json.description}
-    h3 Collections
-      ul
-        - var href = json.links.filter(l => l.rel === 'data' && l.type === 'text/html')[0].href
-        a(href= href) View the collections in this service
-    h3 Conformance
-      ul
-        - var href = json.links.filter(l => l.rel === 'conformance')[0].href
-        a(href= href) View the conformance classes of this service
-    h3 API Definition
-      ul
-        - var href = json.links.filter(l => l.rel === 'service-doc')[0].href
-        a(href= href) Documentation
-      ul
-        - var href = json.links.filter(l => l.rel === 'service-desc')[0].href
-        a(href= href) OpenAPI Document
+    h1 NodeJS ExpressJS OGC API Features - Part 1: Core
+    h2 Links
+    each link in json.links
+      p #{link.rel} = 
+        a(href= link.href)  #{link.title} 
+        | (#{link.type})
+    h2 JSON output
+    p Get raw 
+      - var href = json.links.filter(l => l.rel === 'self')[0].href
+      a(href= href) JSON
+    .jsonContainer
+      .renderjson
+        pre !{JSON.stringify(json, null, 1)}

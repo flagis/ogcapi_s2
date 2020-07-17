@@ -6,17 +6,17 @@ head
   title Metadata about the feature collections
   link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css')
   script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js')
- 
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700')
+  script(src'https://cdn.jsdelivr.net/npm/renderjson@1.4.0/renderjson.min.js')
 body
-  h1 Data from collection 
+
+  .content
+    h1 Data from collection 
     h2 Links
-      p self = 
-        - var href = json.links.filter(l => l.rel === 'alternate')[0].href
-        a(href= href) This document
-      - var next = json.links.filter(l => l.rel === 'next')[0]
-      if next
-        p next = 
-        a(href= next.href) Next results
+    each link in json.links
+      p #{link.rel} = 
+        a(href= link.href)  #{link.title} 
+        | (#{link.type})
     h2 Features
     #map(style='width: 600px; height: 400px; position: relative;')
     script.
@@ -25,6 +25,8 @@ body
       var features = !{JSON.stringify(json.features)}
       L.geoJSON(features).addTo(map);
     h2 JSON Output
-      p Get raw 
-        a(href= json.links[1].href) JSON
+    p Get raw 
+      a(href= json.links[1].href) JSON
+    .jsonContainer
+      .renderjson
         pre !{JSON.stringify(json, null, 1)}
