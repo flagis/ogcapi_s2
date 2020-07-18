@@ -15,8 +15,10 @@ app.use(compression())
 app.use(favicon('./public/favicon.ico'))
 
 // for html rendering
-app.set('views', './views')
+app.set('views', __dirname + '/views');
 app.set('view engine', 'pug')
+
+app.use(express.static(__dirname + '/public'));
 
 // setup middleware to decode the content-type
 // see http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_encodings
