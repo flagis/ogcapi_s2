@@ -24,7 +24,7 @@ function getMetaData (serviceUrl, documents) {
   return content
 }
 
-function get (serviceUrl, callback) { 
+async function get (serviceUrl, callback) { 
 
   debug(`collections ${serviceUrl}`)
 
@@ -32,16 +32,13 @@ function get (serviceUrl, callback) {
 
   var query = { type: 'FeatureCollection' }
   var projection = { name: 1, crs: 1, _id: 1 }
-  mongo.db().collection(`${root}`).find(query, projection)
-                                  .toArray(function(err, documents) {
-    if(err) callback(err, undefined)
+  var documents = await mongo.db().collection(`${root}`)
+                                  .find(query, projection)
+                                  .toArray()
 
-    var content = getMetaData(serviceUrl, documents)
-    
-    if (callback)
-      return callback(undefined, content);
-    return content
-  })
+  var content = getMetaData(serviceUrl, documents)
+  
+  return content
 }
 
 module.exports = {

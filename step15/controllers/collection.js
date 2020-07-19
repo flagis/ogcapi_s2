@@ -3,7 +3,7 @@ const accepts = require('accepts')
 var collection = require('../models/collection.js')
 var utils = require('../utils/utils')
 
-function get (req, res) {
+async function get (req, res) {
    
   debug(`collection ${req.url}`)
 
@@ -12,23 +12,22 @@ function get (req, res) {
 
   debug(`collections serviceUrl ${serviceUrl} collectionId ${collectionId}`)
 
-  collection.get(serviceUrl, collectionId, function(err, content) {
+  var content = await collection.get(serviceUrl, collectionId)
 
-    debug(`collection content %j`, content)
+  debug(`collection content %j`, content)
 
-    var accept = accepts(req)
+  var accept = accepts(req)
 
-    switch (accept.type(['json', 'html'])) {
-      case `json`:
-        res.status(200).json(content)
-        break
-      case `html`:
-        res.status(200).render(`collection`, { content: content })
-        break
-      default:
-        res.status(400).json(`{'code': 'InvalidParameterValue', 'description': '${accept} is an invalid format'}`)
-    }
-  })
+  switch (accept.type(['json', 'html'])) {
+    case `json`:
+      res.status(200).json(content)
+      break
+    case `html`:
+      res.status(200).render(`collection`, { content: content })
+      break
+    default:
+      res.status(400).json(`{'code': 'InvalidParameterValue', 'description': '${accept} is an invalid format'}`)
+  }
   
 }
 

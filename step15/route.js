@@ -1,5 +1,6 @@
-var router = require('express').Router()
- 
+const router = require('express').Router()
+const asyncHandler = require('express-async-handler') // https://www.npmjs.com/package/express-async-handler https://zellwk.com/blog/async-await-express/
+
 var landingPage = require('./controllers/landingPage')
 var conformance = require('./controllers/conformance')
 var collections = require('./controllers/collections')
@@ -21,26 +22,26 @@ var api         = require('./controllers/api')
 
 // Requirement 1 A: The server SHALL support the HTTP GET operation at the path /
 // (ext in index.js)
-router.get('/', landingPage.get)
+router.get('/', asyncHandler(landingPage.get))
 
 // Requirement 5 A: The server SHALL support the HTTP GET operation at the path /conformance
-router.get('/conformance.:ext?', conformance.get)
+router.get('/conformance.:ext?', asyncHandler(conformance.get))
 
 // Requirement 11 A: The server SHALL support the HTTP GET operation at the path /collections.
-router.get('/collections.:ext?', collections.get)
+router.get('/collections.:ext?', asyncHandler(collections.get))
 
 // The server SHALL support the HTTP GET operation at the path /collections/{collectionId}.
-router.get('/collections/:collectionId.:ext?', collection.get)
+router.get('/collections/:collectionId.:ext?', asyncHandler(collection.get))
 
 // For every feature collection identified in the feature collections response (path /collections), 
 // the server SHALL support the HTTP GET operation at the path /collections/{collectionId}/items.
-router.get('/collections/:collectionId/items.:ext?', items.get)
+router.get('/collections/:collectionId/items.:ext?', asyncHandler(items.get))
 
 // For every feature in a feature collection (path /collections/{collectionId}), 
 // the server SHALL support the HTTP GET operation at the path /collections/{collectionId}/items/{featureId}.
-router.get('/collections/:collectionId/items/:featureId', item.get)
+router.get('/collections/:collectionId/items/:featureId', asyncHandler(item.get))
 
 //
-router.get('/api.:ext?', api.get)
+router.get('/api.:ext?', asyncHandler(api.get))
 
 module.exports = router

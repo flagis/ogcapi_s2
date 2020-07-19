@@ -3,7 +3,7 @@ const debug = require('debug')('controller')
 var items = require('../models/items.js')
 var utils = require('../utils/utils')
 
-function get (req, res) {
+async function get (req, res) {
   
   debug(`items ${req.url}`)
 
@@ -22,23 +22,22 @@ function get (req, res) {
 
   var query = {} // TODO, take from req.query
 
-  items.get(serviceUrl, collectionId, query, options, function(err, content) {
+  var content = await items.get(serviceUrl, collectionId, query, options)
 
-    debug(`items content %j`, content)
+  debug(`items content %j`, content)
 
-    var accept = accepts(req)
+  var accept = accepts(req)
 
-    switch (accept.type(['json', 'html'])) {
-    case `json`:
-      res.status(200).json(content)
-      break
-    case `html`:
-      res.status(200).render(`items`, { content: content })
-      break
-    default:
-      res.status(400).json(`{'code': 'InvalidParameterValue', 'description': '${accept} is an invalid format'}`)
-    }
-  })
+  switch (accept.type(['json', 'html'])) {
+  case `json`:
+    res.status(200).json(content)
+    break
+  case `html`:
+    res.status(200).render(`items`, { content: content })
+    break
+  default:
+    res.status(400).json(`{'code': 'InvalidParameterValue', 'description': '${accept} is an invalid format'}`)
+  }
   
 }
 

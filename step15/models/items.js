@@ -23,7 +23,7 @@ function getMetaData (serviceUrl, document) {
   return content
 }
 
-function get (serviceUrl, collectionId, query, options, callback) {
+async function get (serviceUrl, collectionId, query, options, callback) {
       
   debug(`items ${serviceUrl}`)
 
@@ -31,19 +31,14 @@ function get (serviceUrl, collectionId, query, options, callback) {
 
   var query = { type: 'FeatureCollection', name: `${collectionId}` }
 
-  mongo.db().collection(`${root}`)
-            .findOne(query, options, function(err, document) { // QUESTION: limit and skip for features, not the documents
+  var document = await mongo.db().collection(`${root}`)
+                                 .findOne(query, options)
               
-    if(err) callback(err, undefined)
+  var content = getMetaData(serviceUrl, document)
 
-    var content = getMetaData(serviceUrl, document)
+  debug(`items content ${content}`)
 
-    debug(`items content ${content}`)
-
-    if (callback)
-      return callback(undefined, content)
-    return content
-  })
+  return content
 }
 
 module.exports = {

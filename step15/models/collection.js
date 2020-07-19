@@ -26,7 +26,7 @@ function getMetaData (serviceUrl, document) {
   return content
 }
 
-function get (serviceUrl, collectionId, callback) {
+async function get (serviceUrl, collectionId, callback) {
     
   debug(`collection ${serviceUrl}`)
 
@@ -34,15 +34,11 @@ function get (serviceUrl, collectionId, callback) {
 
   var query = { type: 'FeatureCollection', name: `${collectionId}` };
   var projection = { name: 1, crs: 1, _id: 1 }
-  mongo.db().collection(`${root}`).findOne(query, projection, function(err, document) {
-      if(err) callback(err, undefined)
+  var document = await mongo.db().collection(`${root}`).findOne(query, projection)
   
-      var content = getMetaData(serviceUrl, document) // QUESTION 'getMetaData' is not defined
+  var content = getMetaData(serviceUrl, document)
 
-      if (callback)
-        return callback(undefined, content)
-      return content
-    })
+  return content
 }
 
 module.exports = {

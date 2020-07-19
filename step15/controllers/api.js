@@ -2,7 +2,7 @@ const debug = require('debug')('controller')
 const accepts = require('accepts')
 var path = require('path');
 
-function get (req, res) {
+async function get (req, res) {
 
   debug(`api ${req.url}`)
 

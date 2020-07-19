@@ -1,7 +1,7 @@
 const accepts = require('accepts')
 const debug = require('debug')('controller')
 
-function get (req, res) {
+async function get (req, res) {
 
   debug(`item ${req.url}`)
 

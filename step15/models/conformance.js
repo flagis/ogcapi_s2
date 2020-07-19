@@ -1,6 +1,6 @@
 const debug = require('debug')('models')
 
-function get (callback) {
+async function get (callback) {
   
   debug(`conformance`)
 
@@ -14,7 +14,7 @@ function get (callback) {
   content.conformsTo.push("http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/html");
   content.conformsTo.push("http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson");
 
-  return callback(undefined, content);
+  return content
 }
 
 module.exports = {

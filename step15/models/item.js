@@ -1,6 +1,6 @@
 const debug = require('debug')('models')
 
-function get () {
+async function get () {
 
   var content = {}
 
