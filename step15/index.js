@@ -1,4 +1,3 @@
-const compression = require('compression')
 const helmet = require('helmet');
 const express = require('express')
 const favicon = require('serve-favicon')
@@ -10,7 +9,6 @@ var encodings = require('./middlewares/encodings')
 const app = express()
 
 app.use(helmet())
-app.use(compression())
 
 app.use(favicon('./public/favicon.ico'))
 
