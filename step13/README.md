@@ -35,6 +35,6 @@ node index.js
 In je browser of via PostMan
 
 Landing Page:
-- http://localhost/kontich/collections/groendienst/items
-- http://localhost/kontich/collections/groendienst/items?f=json
-- http://localhost/kontich/collections/groendienst/items?f=html
+- http://localhost/kontich/collections/water/items
+- http://localhost/kontich/collections/water/items?f=json
+- http://localhost/kontich/collections/water/items?f=html
